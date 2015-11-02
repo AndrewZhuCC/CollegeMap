@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		49DCF7021BE7133E0036AEEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7011BE7133E0036AEEE /* main.m */; };
 		49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7041BE7133E0036AEEE /* AppDelegate.m */; };
-		49DCF7081BE7133E0036AEEE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7071BE7133E0036AEEE /* ViewController.m */; };
-		49DCF70B1BE7133E0036AEEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DCF7091BE7133E0036AEEE /* Main.storyboard */; };
 		49DCF70D1BE7133E0036AEEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DCF70C1BE7133E0036AEEE /* Images.xcassets */; };
 		49DCF7101BE7133E0036AEEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DCF70E1BE7133E0036AEEE /* LaunchScreen.xib */; };
 		49DCF71C1BE7133E0036AEEE /* CollegeMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF71B1BE7133E0036AEEE /* CollegeMapTests.m */; };
@@ -32,9 +30,6 @@
 		49DCF7011BE7133E0036AEEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49DCF7031BE7133E0036AEEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49DCF7041BE7133E0036AEEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		49DCF7061BE7133E0036AEEE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		49DCF7071BE7133E0036AEEE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		49DCF70A1BE7133E0036AEEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49DCF70C1BE7133E0036AEEE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49DCF70F1BE7133E0036AEEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		49DCF7151BE7133E0036AEEE /* CollegeMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,9 +78,6 @@
 			children = (
 				49DCF7031BE7133E0036AEEE /* AppDelegate.h */,
 				49DCF7041BE7133E0036AEEE /* AppDelegate.m */,
-				49DCF7061BE7133E0036AEEE /* ViewController.h */,
-				49DCF7071BE7133E0036AEEE /* ViewController.m */,
-				49DCF7091BE7133E0036AEEE /* Main.storyboard */,
 				49DCF70C1BE7133E0036AEEE /* Images.xcassets */,
 				49DCF70E1BE7133E0036AEEE /* LaunchScreen.xib */,
 				49DCF6FF1BE7133E0036AEEE /* Supporting Files */,
@@ -199,7 +191,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49DCF70B1BE7133E0036AEEE /* Main.storyboard in Resources */,
 				49DCF7101BE7133E0036AEEE /* LaunchScreen.xib in Resources */,
 				49DCF70D1BE7133E0036AEEE /* Images.xcassets in Resources */,
 			);
@@ -219,7 +210,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49DCF7081BE7133E0036AEEE /* ViewController.m in Sources */,
 				49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */,
 				49DCF7021BE7133E0036AEEE /* main.m in Sources */,
 			);
@@ -244,14 +234,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		49DCF7091BE7133E0036AEEE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49DCF70A1BE7133E0036AEEE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		49DCF70E1BE7133E0036AEEE /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -418,6 +400,7 @@
 				49DCF7211BE7133E0036AEEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49DCF7221BE7133E0036AEEE /* Build configuration list for PBXNativeTarget "CollegeMapTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +409,7 @@
 				49DCF7241BE7133E0036AEEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
