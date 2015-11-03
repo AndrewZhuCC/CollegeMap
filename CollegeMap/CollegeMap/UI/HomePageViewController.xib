@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageViewController">
+            <connections>
+                <outlet property="ItemListTableVIew" destination="70a-CV-bgc" id="D3Z-up-WwJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPu-1k-wZu" userLabel="backgroundImage">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="历史记录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tno-fa-0hd" userLabel="历史记录">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="70a-CV-bgc">
+                    <rect key="frame" x="0.0" y="24" width="320" height="431"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="7yX-Uu-zgs"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="70a-CV-bgc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JCX-05-iXM"/>
+                <constraint firstAttribute="bottom" secondItem="70a-CV-bgc" secondAttribute="bottom" id="Jx0-Vt-9ct"/>
+                <constraint firstAttribute="trailing" secondItem="Tno-fa-0hd" secondAttribute="trailing" id="M72-Bq-geL"/>
+                <constraint firstItem="Tno-fa-0hd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RBt-kA-hBp"/>
+                <constraint firstItem="70a-CV-bgc" firstAttribute="top" secondItem="Tno-fa-0hd" secondAttribute="bottom" id="RIo-hN-KNV"/>
+                <constraint firstAttribute="trailing" secondItem="70a-CV-bgc" secondAttribute="trailing" id="lbJ-0l-7Sw"/>
+                <constraint firstItem="Tno-fa-0hd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ys8-Cf-Ynv"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

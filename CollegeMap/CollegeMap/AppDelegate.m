@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "CYLTabBar.h"
+#import "HomePageViewController.h"
 
 @interface AppDelegate ()
 
@@ -44,6 +46,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - CYLTabBar
+
+- (void)setupViewControllers
+{
+    HomePageViewController *homaPageViewController = [[HomePageViewController alloc]init];
 }
 
 @end
