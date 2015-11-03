@@ -7,10 +7,12 @@
 //
 
 #import "HomePageViewController.h"
+#import "HomePageTableViewDataSource.h"
 
 @interface HomePageViewController () <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *ItemListTableVIew;
+@property (nonatomic, strong) HomePageTableViewDataSource *tableViewDatasource;
 
 @end
 
@@ -18,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    [self setupHomePageTableViewDatasource];
     
 }
 
@@ -32,6 +35,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+}
+
+#pragma mark - TableVIewDatasource
+
+- (void)setupHomePageTableViewDatasource
+{
+    HomePageTableViewDataSource *tableViewDataSource = [[HomePageTableViewDataSource alloc] init];
+    self.tableViewDatasource = tableViewDataSource;
+    [self.ItemListTableVIew setDataSource:(id<UITableViewDataSource>)tableViewDataSource];
 }
 
 /*
