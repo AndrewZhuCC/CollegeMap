@@ -9,12 +9,14 @@
 #import "ScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <QuartzCore/QuartzCore.h>
+#import "QRCodeView.h"
 
 @interface ScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 
 {
     AVCaptureSession           * _session;
     AVCaptureVideoPreviewLayer * _videoLayer;
+    QRCodeView                 * _codeView;
 }
 
 @end
@@ -65,7 +67,9 @@
     //创建输出流
     AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc] init];
     //设置代理 在主线程刷新
-    [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    dispatch_queue_t dispatchQueue;
+    dispatchQueue = dispatch_queue_create("myQueue", NULL);
+    [output setMetadataObjectsDelegate:self queue:dispatchQueue];
     
     //初始化链接对象
     _session = [[AVCaptureSession alloc] init];
@@ -75,13 +79,19 @@
     [_session addInput:input];
     [_session addOutput:output];
     //设置扫码支持的编码格式
-    output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
+    output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeQRCode];
     
     AVCaptureVideoPreviewLayer *layer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
     layer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     layer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height);
     [self.view.layer addSublayer:layer];
     _videoLayer = layer;
+    
+    _codeView = [[QRCodeView alloc] initWithFrame:layer.frame];
+    [_codeView setTag:0];
+    [self.view addSubview:_codeView];
+    
+    output.rectOfInterest = CGRectMake(0.125, 0.125, 0.75, 0.75);
     
     [_session startRunning];
 }
@@ -99,7 +109,16 @@
         AVMetadataMachineReadableCodeObject *metadataObject = [metadataObjects objectAtIndex:0];
         
         NSLog(@"%@",metadataObject.stringValue);
+        
+        NSString *code = metadataObject.stringValue;
+        
+        if (code.length != 13 && code.length != 8) {
+            [_codeView showFailSoon];
+        } else {
+            
+        }
     }
+    NSLog(@"-------------------");
 }
 
 /*

@@ -21,6 +21,7 @@
 		49DCF70D1BE7133E0036AEEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DCF70C1BE7133E0036AEEE /* Images.xcassets */; };
 		49DCF7101BE7133E0036AEEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DCF70E1BE7133E0036AEEE /* LaunchScreen.xib */; };
 		49DCF71C1BE7133E0036AEEE /* CollegeMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF71B1BE7133E0036AEEE /* CollegeMapTests.m */; };
+		49E97C991BE89C120009673E /* QRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E97C981BE89C120009673E /* QRCodeView.m */; };
 		B28AB188890E76C4DB4436F8 /* libPods-CollegeMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2037EEA7EDDAD149F868CB6A /* libPods-CollegeMap.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		49DCF7151BE7133E0036AEEE /* CollegeMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DCF71A1BE7133E0036AEEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DCF71B1BE7133E0036AEEE /* CollegeMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollegeMapTests.m; sourceTree = "<group>"; };
+		49E97C971BE89C120009673E /* QRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeView.h; sourceTree = "<group>"; };
+		49E97C981BE89C120009673E /* QRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeView.m; sourceTree = "<group>"; };
 		75DE5F84E9C93482E4CD5FCD /* Pods-CollegeMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollegeMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-CollegeMap/Pods-CollegeMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +146,8 @@
 			children = (
 				49CD68991BE888B000D83F73 /* ScanViewController.h */,
 				49CD689A1BE888B000D83F73 /* ScanViewController.m */,
+				49E97C971BE89C120009673E /* QRCodeView.h */,
+				49E97C981BE89C120009673E /* QRCodeView.m */,
 			);
 			name = ScanVIewController;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				49B296821BE87220008CA3CF /* HomePageTableViewDataSource.m in Sources */,
 				49CD689C1BE888B000D83F73 /* ScanViewController.m in Sources */,
 				49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */,
+				49E97C991BE89C120009673E /* QRCodeView.m in Sources */,
 				49DCF7021BE7133E0036AEEE /* main.m in Sources */,
 				49B2967B1BE871E9008CA3CF /* HomePageViewController.m in Sources */,
 				49CD688A1BE8780100D83F73 /* SettingPageViewController.m in Sources */,
