@@ -15,6 +15,7 @@
 		49CD688F1BE87CB100D83F73 /* AZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD688E1BE87CB100D83F73 /* AZNavigationController.m */; };
 		49CD68911BE87D8800D83F73 /* HomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CD68901BE87D8800D83F73 /* HomePageTableViewCell.xib */; };
 		49CD68951BE8849B00D83F73 /* AZPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD68941BE8849B00D83F73 /* AZPlusButton.m */; };
+		49CD689C1BE888B000D83F73 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD689A1BE888B000D83F73 /* ScanViewController.m */; };
 		49DCF7021BE7133E0036AEEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7011BE7133E0036AEEE /* main.m */; };
 		49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7041BE7133E0036AEEE /* AppDelegate.m */; };
 		49DCF70D1BE7133E0036AEEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DCF70C1BE7133E0036AEEE /* Images.xcassets */; };
@@ -49,6 +50,8 @@
 		49CD68901BE87D8800D83F73 /* HomePageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePageTableViewCell.xib; path = UI/TableViewDataSource/HomePageTableViewCell.xib; sourceTree = "<group>"; };
 		49CD68931BE8849B00D83F73 /* AZPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AZPlusButton.h; path = UI/PlusButton/AZPlusButton.h; sourceTree = "<group>"; };
 		49CD68941BE8849B00D83F73 /* AZPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZPlusButton.m; path = UI/PlusButton/AZPlusButton.m; sourceTree = "<group>"; };
+		49CD68991BE888B000D83F73 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanViewController.h; path = UI/ScanViewController/ScanViewController.h; sourceTree = "<group>"; };
+		49CD689A1BE888B000D83F73 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanViewController.m; path = UI/ScanViewController/ScanViewController.m; sourceTree = "<group>"; };
 		49DCF6FC1BE7133E0036AEEE /* CollegeMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DCF7001BE7133E0036AEEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DCF7011BE7133E0036AEEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 				49CD68921BE8846100D83F73 /* PlusButton */,
 				49CD688C1BE87C7800D83F73 /* AZNavigationController */,
 				49B2967F1BE8720D008CA3CF /* TableViewDatasource */,
+				49CD68981BE887DE00D83F73 /* ScanVIewController */,
 				49B296761BE871E9008CA3CF /* HomePageViewController.h */,
 				49B296771BE871E9008CA3CF /* HomePageViewController.m */,
 				49B296781BE871E9008CA3CF /* HomePageViewController.xib */,
@@ -132,6 +136,15 @@
 				49CD68941BE8849B00D83F73 /* AZPlusButton.m */,
 			);
 			name = PlusButton;
+			sourceTree = "<group>";
+		};
+		49CD68981BE887DE00D83F73 /* ScanVIewController */ = {
+			isa = PBXGroup;
+			children = (
+				49CD68991BE888B000D83F73 /* ScanViewController.h */,
+				49CD689A1BE888B000D83F73 /* ScanViewController.m */,
+			);
+			name = ScanVIewController;
 			sourceTree = "<group>";
 		};
 		49DCF6F31BE7133E0036AEEE = {
@@ -357,6 +370,7 @@
 				49CD68951BE8849B00D83F73 /* AZPlusButton.m in Sources */,
 				49CD688F1BE87CB100D83F73 /* AZNavigationController.m in Sources */,
 				49B296821BE87220008CA3CF /* HomePageTableViewDataSource.m in Sources */,
+				49CD689C1BE888B000D83F73 /* ScanViewController.m in Sources */,
 				49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */,
 				49DCF7021BE7133E0036AEEE /* main.m in Sources */,
 				49B2967B1BE871E9008CA3CF /* HomePageViewController.m in Sources */,

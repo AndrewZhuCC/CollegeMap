@@ -7,6 +7,8 @@
 //
 
 #import "AZPlusButton.h"
+#import "ScanViewController.h"
+#import "AZNavigationController.h"
 
 @implementation AZPlusButton
 
@@ -69,7 +71,14 @@
 #pragma mark - Event Response
 
 - (void)clickPublish {
-    NSLog(@"click Button test");
+    
+    ScanViewController *scanVC = [[ScanViewController alloc] init];
+    AZNavigationController *navigationController = [[AZNavigationController alloc] initWithRootViewController:scanVC];
+    
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *currentViewController = (UINavigationController *)tabBarController.selectedViewController;
+
+    [tabBarController presentViewController:navigationController animated:YES completion:nil];
 }
 
 #pragma mark - CYLPlusButtonSubclassing
