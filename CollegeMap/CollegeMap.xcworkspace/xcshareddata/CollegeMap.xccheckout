@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9DF8AA5A-76E4-44EF-932E-FE8AB5685700</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CollegeMap</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>ADD647EF4D326E1AE9BA1465CDFA7512940B6CC5</key>
+		<string>https://github.com/TecomAndrew/CollegeMap.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CollegeMap/CollegeMap.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>ADD647EF4D326E1AE9BA1465CDFA7512940B6CC5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/TecomAndrew/CollegeMap.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>ADD647EF4D326E1AE9BA1465CDFA7512940B6CC5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ADD647EF4D326E1AE9BA1465CDFA7512940B6CC5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CollegeMap</string>
+		</dict>
+	</array>
+</dict>
+</plist>
