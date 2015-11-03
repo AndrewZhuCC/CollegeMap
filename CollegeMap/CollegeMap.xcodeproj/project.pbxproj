@@ -12,11 +12,15 @@
 		49B2967C1BE871E9008CA3CF /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B296781BE871E9008CA3CF /* HomePageViewController.xib */; };
 		49B2967D1BE871E9008CA3CF /* TableViewDataSource in Resources */ = {isa = PBXBuildFile; fileRef = 49B296791BE871E9008CA3CF /* TableViewDataSource */; };
 		49B296821BE87220008CA3CF /* HomePageTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B296811BE87220008CA3CF /* HomePageTableViewDataSource.m */; };
+		49CD688A1BE8780100D83F73 /* SettingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD68881BE8780100D83F73 /* SettingPageViewController.m */; };
+		49CD688B1BE8780100D83F73 /* SettingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CD68891BE8780100D83F73 /* SettingPageViewController.xib */; };
+		49CD688F1BE87CB100D83F73 /* AZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD688E1BE87CB100D83F73 /* AZNavigationController.m */; };
 		49DCF7021BE7133E0036AEEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7011BE7133E0036AEEE /* main.m */; };
 		49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7041BE7133E0036AEEE /* AppDelegate.m */; };
 		49DCF70D1BE7133E0036AEEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DCF70C1BE7133E0036AEEE /* Images.xcassets */; };
 		49DCF7101BE7133E0036AEEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DCF70E1BE7133E0036AEEE /* LaunchScreen.xib */; };
 		49DCF71C1BE7133E0036AEEE /* CollegeMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF71B1BE7133E0036AEEE /* CollegeMapTests.m */; };
+		B28AB188890E76C4DB4436F8 /* libPods-CollegeMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2037EEA7EDDAD149F868CB6A /* libPods-CollegeMap.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2037EEA7EDDAD149F868CB6A /* libPods-CollegeMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CollegeMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9EBED39EA4F204EEBA1FE6 /* Pods-CollegeMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollegeMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CollegeMap/Pods-CollegeMap.debug.xcconfig"; sourceTree = "<group>"; };
 		49B296751BE871E9008CA3CF /* HomePageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePageTableViewCell.xib; path = UI/HomePageTableViewCell.xib; sourceTree = "<group>"; };
 		49B296761BE871E9008CA3CF /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageViewController.h; path = UI/HomePageViewController.h; sourceTree = "<group>"; };
 		49B296771BE871E9008CA3CF /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageViewController.m; path = UI/HomePageViewController.m; sourceTree = "<group>"; };
@@ -37,6 +43,11 @@
 		49B296791BE871E9008CA3CF /* TableViewDataSource */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TableViewDataSource; path = UI/TableViewDataSource; sourceTree = "<group>"; };
 		49B296801BE87220008CA3CF /* HomePageTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageTableViewDataSource.h; path = UI/TableViewDataSource/HomePageTableViewDataSource.h; sourceTree = "<group>"; };
 		49B296811BE87220008CA3CF /* HomePageTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageTableViewDataSource.m; path = UI/TableViewDataSource/HomePageTableViewDataSource.m; sourceTree = "<group>"; };
+		49CD68871BE8780100D83F73 /* SettingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingPageViewController.h; path = UI/SettingPageViewController.h; sourceTree = "<group>"; };
+		49CD68881BE8780100D83F73 /* SettingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingPageViewController.m; path = UI/SettingPageViewController.m; sourceTree = "<group>"; };
+		49CD68891BE8780100D83F73 /* SettingPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingPageViewController.xib; path = UI/SettingPageViewController.xib; sourceTree = "<group>"; };
+		49CD688D1BE87CB100D83F73 /* AZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AZNavigationController.h; path = UI/AZNavigationController/AZNavigationController.h; sourceTree = "<group>"; };
+		49CD688E1BE87CB100D83F73 /* AZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZNavigationController.m; path = UI/AZNavigationController/AZNavigationController.m; sourceTree = "<group>"; };
 		49DCF6FC1BE7133E0036AEEE /* CollegeMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DCF7001BE7133E0036AEEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DCF7011BE7133E0036AEEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +58,7 @@
 		49DCF7151BE7133E0036AEEE /* CollegeMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DCF71A1BE7133E0036AEEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DCF71B1BE7133E0036AEEE /* CollegeMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollegeMapTests.m; sourceTree = "<group>"; };
+		75DE5F84E9C93482E4CD5FCD /* Pods-CollegeMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollegeMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-CollegeMap/Pods-CollegeMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28AB188890E76C4DB4436F8 /* libPods-CollegeMap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,14 +80,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EF9513F8AD21BF79A9F0B2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C9EBED39EA4F204EEBA1FE6 /* Pods-CollegeMap.debug.xcconfig */,
+				75DE5F84E9C93482E4CD5FCD /* Pods-CollegeMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		49B2967E1BE871FD008CA3CF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				49CD688C1BE87C7800D83F73 /* AZNavigationController */,
 				49B2967F1BE8720D008CA3CF /* TableViewDatasource */,
 				49B296751BE871E9008CA3CF /* HomePageTableViewCell.xib */,
 				49B296761BE871E9008CA3CF /* HomePageViewController.h */,
 				49B296771BE871E9008CA3CF /* HomePageViewController.m */,
 				49B296781BE871E9008CA3CF /* HomePageViewController.xib */,
+				49CD68871BE8780100D83F73 /* SettingPageViewController.h */,
+				49CD68881BE8780100D83F73 /* SettingPageViewController.m */,
+				49CD68891BE8780100D83F73 /* SettingPageViewController.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -88,12 +114,23 @@
 			name = TableViewDatasource;
 			sourceTree = "<group>";
 		};
+		49CD688C1BE87C7800D83F73 /* AZNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				49CD688D1BE87CB100D83F73 /* AZNavigationController.h */,
+				49CD688E1BE87CB100D83F73 /* AZNavigationController.m */,
+			);
+			name = AZNavigationController;
+			sourceTree = "<group>";
+		};
 		49DCF6F31BE7133E0036AEEE = {
 			isa = PBXGroup;
 			children = (
 				49DCF6FE1BE7133E0036AEEE /* CollegeMap */,
 				49DCF7181BE7133E0036AEEE /* CollegeMapTests */,
 				49DCF6FD1BE7133E0036AEEE /* Products */,
+				3EF9513F8AD21BF79A9F0B2E /* Pods */,
+				CFDAAC33AD1D5782D2B00F98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +183,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CFDAAC33AD1D5782D2B00F98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2037EEA7EDDAD149F868CB6A /* libPods-CollegeMap.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49DCF71F1BE7133E0036AEEE /* Build configuration list for PBXNativeTarget "CollegeMap" */;
 			buildPhases = (
+				875230A5D385C66933C61112 /* Check Pods Manifest.lock */,
 				49DCF6F81BE7133E0036AEEE /* Sources */,
 				49DCF6F91BE7133E0036AEEE /* Frameworks */,
 				49DCF6FA1BE7133E0036AEEE /* Resources */,
+				F9A782239CF7CFB7C6A69B56 /* Embed Pods Frameworks */,
+				25F82AF1371B090E30117ED4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CD688B1BE8780100D83F73 /* SettingPageViewController.xib in Resources */,
 				49B2967C1BE871E9008CA3CF /* HomePageViewController.xib in Resources */,
 				49DCF7101BE7133E0036AEEE /* LaunchScreen.xib in Resources */,
 				49B2967D1BE871E9008CA3CF /* TableViewDataSource in Resources */,
@@ -243,15 +292,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25F82AF1371B090E30117ED4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CollegeMap/Pods-CollegeMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		875230A5D385C66933C61112 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F9A782239CF7CFB7C6A69B56 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CollegeMap/Pods-CollegeMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		49DCF6F81BE7133E0036AEEE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CD688F1BE87CB100D83F73 /* AZNavigationController.m in Sources */,
 				49B296821BE87220008CA3CF /* HomePageTableViewDataSource.m in Sources */,
 				49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */,
 				49DCF7021BE7133E0036AEEE /* main.m in Sources */,
 				49B2967B1BE871E9008CA3CF /* HomePageViewController.m in Sources */,
+				49CD688A1BE8780100D83F73 /* SettingPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +427,7 @@
 				PROVISIONING_PROFILE = "aec4792b-f85b-4af8-91c7-eae17165188b";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -367,12 +467,14 @@
 				PROVISIONING_PROFILE = "aec4792b-f85b-4af8-91c7-eae17165188b";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		49DCF7201BE7133E0036AEEE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C9EBED39EA4F204EEBA1FE6 /* Pods-CollegeMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CollegeMap/Info.plist;
@@ -383,6 +485,7 @@
 		};
 		49DCF7211BE7133E0036AEEE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75DE5F84E9C93482E4CD5FCD /* Pods-CollegeMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CollegeMap/Info.plist;

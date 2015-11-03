@@ -1,37 +1,30 @@
 //
-//  HomePageViewController.m
+//  AZNavigationController.m
 //  CollegeMap
 //
 //  Created by Andrew on 15/11/3.
 //  Copyright (c) 2015年 Tecomtech. All rights reserved.
 //
 
-#import "HomePageViewController.h"
+#import "AZNavigationController.h"
 
-@interface HomePageViewController () <UITableViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *ItemListTableVIew;
+@interface AZNavigationController ()
 
 @end
 
-@implementation HomePageViewController
+@implementation AZNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
     
+    [self.navigationBar setOpaque:YES];
+    [self.navigationBar setTranslucent:NO];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - TableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
 }
 
 /*

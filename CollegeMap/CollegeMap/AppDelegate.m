@@ -7,10 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "CYLTabBar.h"
 #import "HomePageViewController.h"
+#import "SettingPageViewController.h"
+#import "CYLTabBar.h"
+#import "AZNavigationController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) CYLTabBarController *tabBarController;
 
 @end
 
@@ -20,6 +24,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [self setupViewControllers];
+    
+    [self.window setRootViewController:self.tabBarController];
     
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
@@ -52,7 +60,45 @@
 
 - (void)setupViewControllers
 {
-    HomePageViewController *homaPageViewController = [[HomePageViewController alloc]init];
+    HomePageViewController *homePageViewController    = [[HomePageViewController alloc] init];
+    AZNavigationController *firstNavigationController = [[AZNavigationController alloc] initWithRootViewController:homePageViewController];
+    
+    SettingPageViewController *settingPageViewController = [[SettingPageViewController alloc] init];
+    AZNavigationController *secondNavigationController   = [[AZNavigationController alloc] initWithRootViewController:settingPageViewController];
+    
+    CYLTabBarController *tabBarController = [[CYLTabBarController alloc] init];
+    [self customizeTabBarForController:tabBarController];
+    
+    /**
+     *  将一个包含所有不超过5个viewControllers的数组传给tabBarController，设置tabbar控制的子viewController
+     */
+    [tabBarController setViewControllers:@[
+                                          firstNavigationController,
+                                          secondNavigationController
+                                          ]];
+    
+    self.tabBarController = tabBarController;
 }
+
+- (void)customizeTabBarForController:(CYLTabBarController *)tabBatController
+{
+    /**
+     *  每个子viewController对应一个dictionary
+     */
+    NSDictionary *dic1 = @{
+                           CYLTabBarItemTitle : @"Home"
+                           };
+    
+    NSDictionary *dic2 = @{
+                           CYLTabBarItemTitle : @"Setting"
+                           };
+    
+    /**
+     *  在此传入第二个数组，包含viewController的title,iamge,selectedImage
+     */
+    NSArray *tabBarItemsAttributes = @[ dic1, dic2];
+    tabBatController.tabBarItemsAttributes = tabBarItemsAttributes;
+}
+
 
 @end
