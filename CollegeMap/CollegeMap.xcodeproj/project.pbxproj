@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49B2967A1BE871E9008CA3CF /* HomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B296751BE871E9008CA3CF /* HomePageTableViewCell.xib */; };
+		49B2967B1BE871E9008CA3CF /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B296771BE871E9008CA3CF /* HomePageViewController.m */; };
+		49B2967C1BE871E9008CA3CF /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B296781BE871E9008CA3CF /* HomePageViewController.xib */; };
+		49B2967D1BE871E9008CA3CF /* TableViewDataSource in Resources */ = {isa = PBXBuildFile; fileRef = 49B296791BE871E9008CA3CF /* TableViewDataSource */; };
+		49B296821BE87220008CA3CF /* HomePageTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B296811BE87220008CA3CF /* HomePageTableViewDataSource.m */; };
 		49DCF7021BE7133E0036AEEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7011BE7133E0036AEEE /* main.m */; };
 		49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7041BE7133E0036AEEE /* AppDelegate.m */; };
 		49DCF70D1BE7133E0036AEEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DCF70C1BE7133E0036AEEE /* Images.xcassets */; };
@@ -25,6 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49B296751BE871E9008CA3CF /* HomePageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePageTableViewCell.xib; path = UI/HomePageTableViewCell.xib; sourceTree = "<group>"; };
+		49B296761BE871E9008CA3CF /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageViewController.h; path = UI/HomePageViewController.h; sourceTree = "<group>"; };
+		49B296771BE871E9008CA3CF /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageViewController.m; path = UI/HomePageViewController.m; sourceTree = "<group>"; };
+		49B296781BE871E9008CA3CF /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePageViewController.xib; path = UI/HomePageViewController.xib; sourceTree = "<group>"; };
+		49B296791BE871E9008CA3CF /* TableViewDataSource */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TableViewDataSource; path = UI/TableViewDataSource; sourceTree = "<group>"; };
+		49B296801BE87220008CA3CF /* HomePageTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageTableViewDataSource.h; path = UI/TableViewDataSource/HomePageTableViewDataSource.h; sourceTree = "<group>"; };
+		49B296811BE87220008CA3CF /* HomePageTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageTableViewDataSource.m; path = UI/TableViewDataSource/HomePageTableViewDataSource.m; sourceTree = "<group>"; };
 		49DCF6FC1BE7133E0036AEEE /* CollegeMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DCF7001BE7133E0036AEEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DCF7011BE7133E0036AEEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,6 +67,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49B2967E1BE871FD008CA3CF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				49B2967F1BE8720D008CA3CF /* TableViewDatasource */,
+				49B296751BE871E9008CA3CF /* HomePageTableViewCell.xib */,
+				49B296761BE871E9008CA3CF /* HomePageViewController.h */,
+				49B296771BE871E9008CA3CF /* HomePageViewController.m */,
+				49B296781BE871E9008CA3CF /* HomePageViewController.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		49B2967F1BE8720D008CA3CF /* TableViewDatasource */ = {
+			isa = PBXGroup;
+			children = (
+				49B296801BE87220008CA3CF /* HomePageTableViewDataSource.h */,
+				49B296811BE87220008CA3CF /* HomePageTableViewDataSource.m */,
+			);
+			name = TableViewDatasource;
+			sourceTree = "<group>";
+		};
 		49DCF6F31BE7133E0036AEEE = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +109,8 @@
 		49DCF6FE1BE7133E0036AEEE /* CollegeMap */ = {
 			isa = PBXGroup;
 			children = (
+				49B2967E1BE871FD008CA3CF /* UI */,
+				49B296791BE871E9008CA3CF /* TableViewDataSource */,
 				49DCF7031BE7133E0036AEEE /* AppDelegate.h */,
 				49DCF7041BE7133E0036AEEE /* AppDelegate.m */,
 				49DCF70C1BE7133E0036AEEE /* Images.xcassets */,
@@ -191,8 +226,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B2967C1BE871E9008CA3CF /* HomePageViewController.xib in Resources */,
 				49DCF7101BE7133E0036AEEE /* LaunchScreen.xib in Resources */,
+				49B2967D1BE871E9008CA3CF /* TableViewDataSource in Resources */,
 				49DCF70D1BE7133E0036AEEE /* Images.xcassets in Resources */,
+				49B2967A1BE871E9008CA3CF /* HomePageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,8 +248,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B296821BE87220008CA3CF /* HomePageTableViewDataSource.m in Sources */,
 				49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */,
 				49DCF7021BE7133E0036AEEE /* main.m in Sources */,
+				49B2967B1BE871E9008CA3CF /* HomePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
