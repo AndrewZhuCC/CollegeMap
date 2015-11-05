@@ -10,6 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "QRCodeView.h"
+#import "AZAlertViewController.h"
+#import "KLCPopup.h"
+#import "NetWorkController.h"
 
 @interface ScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 
@@ -31,9 +34,23 @@
     
     [self setupBackButton];
     
+//    [self startCodeReading];
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
     [self startCodeReading];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
     
-    
+    [self stopReading];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,11 +74,30 @@
 
 - (void)startCodeReading
 {
+    [self setupSession];
+
+    _videoLayer = [self setupPreviewLayer];
+    
+    _codeView = [[QRCodeView alloc] initWithFrame:_videoLayer.frame];
+    [_codeView setTag:0];
+    [self.view addSubview:_codeView];
+    
+    [_session startRunning];
+}
+
+- (void)stopReading{
+    [_session stopRunning];
+    _session = nil;
+    [_videoLayer removeFromSuperlayer];
+    _videoLayer = nil;
+}
+
+- (void)setupSession
+{
     /**
      *  获取摄像设备
      */
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
     //创建输入流
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
     //创建输出流
@@ -78,28 +114,21 @@
     
     [_session addInput:input];
     [_session addOutput:output];
-    //设置扫码支持的编码格式
-    output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeQRCode];
     
+    //设置扫码支持的编码格式
+    output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
+    
+    output.rectOfInterest = CGRectMake(0.125, 0.125, 0.75, 0.75);
+}
+
+- (AVCaptureVideoPreviewLayer *)setupPreviewLayer
+{
     AVCaptureVideoPreviewLayer *layer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
     layer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     layer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height);
     [self.view.layer addSublayer:layer];
-    _videoLayer = layer;
     
-    _codeView = [[QRCodeView alloc] initWithFrame:layer.frame];
-    [_codeView setTag:0];
-    [self.view addSubview:_codeView];
-    
-    output.rectOfInterest = CGRectMake(0.125, 0.125, 0.75, 0.75);
-    
-    [_session startRunning];
-}
-
--(void)stopReading{
-    [_session stopRunning];
-    _session = nil;
-    [_videoLayer removeFromSuperlayer];
+    return layer;
 }
 
 #pragma mark - AVCaptureOutPut
@@ -115,10 +144,41 @@
         if (code.length != 13 && code.length != 8) {
             [_codeView showFailSoon];
         } else {
+            [self stopReading];
             
+            NSDictionary *barcodeResult = [self getBarcodeResult:code];
+            
+            [self performSelectorOnMainThread:@selector(showPopUpView:) withObject:barcodeResult waitUntilDone:YES];
         }
     }
     NSLog(@"-------------------");
+}
+
+- (void)showPopUpView: (NSDictionary *)barcodeResult
+{
+    NSString *title = [barcodeResult objectForKey:ZAZResultTitle];
+    NSURL *imageURL = [barcodeResult objectForKey:ZAZResultImage];
+    
+    AZAlertViewController *azViewController = [[AZAlertViewController alloc]init];
+    [azViewController AZSetFrame:CGRectMake(10, 10, 250, 250)];
+    [azViewController AZSetBarcodeResultWithTitle:title andImageURL:imageURL];
+    __block KLCPopup *temppopUp =
+    [KLCPopup popupWithContentView:azViewController.view
+                          showType:KLCPopupShowTypeFadeIn
+                       dismissType:KLCPopupDismissTypeFadeOut
+                          maskType:KLCPopupMaskTypeDimmed
+          dismissOnBackgroundTouch:YES
+             dismissOnContentTouch:NO];
+    
+    [temppopUp show];
+}
+
+- (NSDictionary *)getBarcodeResult:(NSString *)barcode
+{
+    NetWorkController *netCon = [[NetWorkController alloc] init];
+    NSDictionary *result = [netCon searchBarcode:barcode];
+    
+    return result;
 }
 
 /*

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KLCPopup.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Ono.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0636D291AC276A9BE09E022B53E06D7A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>16ACF35FDB8EAF2E5A8191EA1BCBEA01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>212E463A5B92D892736B962EEF8D4DA7</key>
+		<key>547A177AD115DA1B0FDAE1C182DB7A7B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>55F7A9FA18D797218B78952AF04C4493</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5DFCCDD75F94C1D5B5925D6D9F3E718E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -16,6 +16,9 @@
 		49CD68911BE87D8800D83F73 /* HomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CD68901BE87D8800D83F73 /* HomePageTableViewCell.xib */; };
 		49CD68951BE8849B00D83F73 /* AZPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD68941BE8849B00D83F73 /* AZPlusButton.m */; };
 		49CD689C1BE888B000D83F73 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD689A1BE888B000D83F73 /* ScanViewController.m */; };
+		49DB3A101BEB38AD0062B61F /* AZAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB3A0E1BEB38AD0062B61F /* AZAlertViewController.m */; };
+		49DB3A111BEB38AD0062B61F /* AZAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DB3A0F1BEB38AD0062B61F /* AZAlertViewController.xib */; };
+		49DB3A141BEB3B610062B61F /* AZAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB3A131BEB3B610062B61F /* AZAlertController.m */; };
 		49DCF7021BE7133E0036AEEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7011BE7133E0036AEEE /* main.m */; };
 		49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCF7041BE7133E0036AEEE /* AppDelegate.m */; };
 		49DCF70D1BE7133E0036AEEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DCF70C1BE7133E0036AEEE /* Images.xcassets */; };
@@ -54,6 +57,11 @@
 		49CD68941BE8849B00D83F73 /* AZPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZPlusButton.m; path = UI/PlusButton/AZPlusButton.m; sourceTree = "<group>"; };
 		49CD68991BE888B000D83F73 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanViewController.h; path = UI/ScanViewController/ScanViewController.h; sourceTree = "<group>"; };
 		49CD689A1BE888B000D83F73 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanViewController.m; path = UI/ScanViewController/ScanViewController.m; sourceTree = "<group>"; };
+		49DB3A0D1BEB38AD0062B61F /* AZAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AZAlertViewController.h; path = UI/AZAlertViewController.h; sourceTree = "<group>"; };
+		49DB3A0E1BEB38AD0062B61F /* AZAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZAlertViewController.m; path = UI/AZAlertViewController.m; sourceTree = "<group>"; };
+		49DB3A0F1BEB38AD0062B61F /* AZAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AZAlertViewController.xib; path = UI/AZAlertViewController.xib; sourceTree = "<group>"; };
+		49DB3A121BEB3B610062B61F /* AZAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AZAlertController.h; path = UI/AZAlertController.h; sourceTree = "<group>"; };
+		49DB3A131BEB3B610062B61F /* AZAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZAlertController.m; path = UI/AZAlertController.m; sourceTree = "<group>"; };
 		49DCF6FC1BE7133E0036AEEE /* CollegeMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DCF7001BE7133E0036AEEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DCF7011BE7133E0036AEEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,9 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				49CD68921BE8846100D83F73 /* PlusButton */,
+				49CD68981BE887DE00D83F73 /* ScanVIewController */,
 				49CD688C1BE87C7800D83F73 /* AZNavigationController */,
 				49B2967F1BE8720D008CA3CF /* TableViewDatasource */,
-				49CD68981BE887DE00D83F73 /* ScanVIewController */,
 				49B296761BE871E9008CA3CF /* HomePageViewController.h */,
 				49B296771BE871E9008CA3CF /* HomePageViewController.m */,
 				49B296781BE871E9008CA3CF /* HomePageViewController.xib */,
@@ -155,6 +163,18 @@
 			name = ScanVIewController;
 			sourceTree = "<group>";
 		};
+		49DB3A0A1BEB383A0062B61F /* AlterView */ = {
+			isa = PBXGroup;
+			children = (
+				49DB3A0D1BEB38AD0062B61F /* AZAlertViewController.h */,
+				49DB3A0E1BEB38AD0062B61F /* AZAlertViewController.m */,
+				49DB3A0F1BEB38AD0062B61F /* AZAlertViewController.xib */,
+				49DB3A121BEB3B610062B61F /* AZAlertController.h */,
+				49DB3A131BEB3B610062B61F /* AZAlertController.m */,
+			);
+			name = AlterView;
+			sourceTree = "<group>";
+		};
 		49DCF6F31BE7133E0036AEEE = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +198,7 @@
 		49DCF6FE1BE7133E0036AEEE /* CollegeMap */ = {
 			isa = PBXGroup;
 			children = (
+				49DB3A0A1BEB383A0062B61F /* AlterView */,
 				49E71E411BE9A1E900A0E0B1 /* Model */,
 				49B2967E1BE871FD008CA3CF /* UI */,
 				49DCF7031BE7133E0036AEEE /* AppDelegate.h */,
@@ -319,6 +340,7 @@
 				49B2967C1BE871E9008CA3CF /* HomePageViewController.xib in Resources */,
 				49DCF7101BE7133E0036AEEE /* LaunchScreen.xib in Resources */,
 				49DCF70D1BE7133E0036AEEE /* Images.xcassets in Resources */,
+				49DB3A111BEB38AD0062B61F /* AZAlertViewController.xib in Resources */,
 				49CD68911BE87D8800D83F73 /* HomePageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,8 +412,10 @@
 				49CD688F1BE87CB100D83F73 /* AZNavigationController.m in Sources */,
 				49B296821BE87220008CA3CF /* HomePageTableViewDataSource.m in Sources */,
 				49CD689C1BE888B000D83F73 /* ScanViewController.m in Sources */,
+				49DB3A141BEB3B610062B61F /* AZAlertController.m in Sources */,
 				49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */,
 				49E97C991BE89C120009673E /* QRCodeView.m in Sources */,
+				49DB3A101BEB38AD0062B61F /* AZAlertViewController.m in Sources */,
 				49DCF7021BE7133E0036AEEE /* main.m in Sources */,
 				49B2967B1BE871E9008CA3CF /* HomePageViewController.m in Sources */,
 				49CD688A1BE8780100D83F73 /* SettingPageViewController.m in Sources */,
@@ -468,7 +492,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "aec4792b-f85b-4af8-91c7-eae17165188b";
+				PROVISIONING_PROFILE = "9356a277-ae3b-41c9-99a5-694a40274d92";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
@@ -508,7 +532,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "aec4792b-f85b-4af8-91c7-eae17165188b";
+				PROVISIONING_PROFILE = "9356a277-ae3b-41c9-99a5-694a40274d92";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
