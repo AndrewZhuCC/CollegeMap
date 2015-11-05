@@ -5,6 +5,8 @@ platform :ios, '8.0'
 
 target 'CollegeMap' do
 pod 'CYLTabBarController'
+pod ‘Ono’
+pod 'SDWebImage'
 end
 
 target 'CollegeMapTests' do
