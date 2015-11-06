@@ -11,6 +11,7 @@
 #import "SettingPageViewController.h"
 #import "CYLTabBar.h"
 #import "AZNavigationController.h"
+#import "BarcodeItemStore.h"
 
 @interface AppDelegate ()
 
@@ -54,6 +55,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    if ([[BarcodeItemStore sharedInstance].managedObjectContext hasChanges]) {
+        NSError *error = nil;
+        if ([[BarcodeItemStore sharedInstance].managedObjectContext save:&error] == NO) {
+            NSLog(@"save error(%@ - %@)",error,[error description]);
+        }
+    }
 }
 
 #pragma mark - CYLTabBar

@@ -7,6 +7,14 @@
 //
 
 #import "HomePageTableViewDataSource.h"
+#import "BarcodeItemStore.h"
+#import "BarcodeItem.h"
+
+@interface HomePageTableViewDataSource ()
+
+@property (nonatomic, strong) NSArray *items;
+
+@end
 
 @implementation HomePageTableViewDataSource
 
@@ -18,8 +26,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger anumber = 10;
-    return 5;
+    return [self.items count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -30,9 +37,24 @@
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HomePageTableViewCell" owner:cell options:nil];
         cell = [nib objectAtIndex:0];
+        UILabel *nameLabel = (UILabel *)[cell viewWithTag:261];
+        UISwitch *switchB = (UISwitch *)[cell viewWithTag:262];
+        UILabel *likeLabel = (UILabel *)[cell viewWithTag:263];
+        UITextField *textField = (UITextField *)[cell viewWithTag:264];
+        BarcodeItem *item = (BarcodeItem *)[self.items objectAtIndex:indexPath.row];
+        
+        nameLabel.text = item.itemName;
     }
     
     return cell;
+}
+
+- (NSArray *)items
+{
+    if (_items == nil) {
+        _items = [[BarcodeItemStore sharedInstance] allItem];
+    }
+    return _items;
 }
 
 @end

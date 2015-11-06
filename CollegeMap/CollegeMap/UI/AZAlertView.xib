@@ -74,9 +74,11 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="cancelButton" destination="Sjx-61-xju" id="LSp-HO-EpP"/>
                 <outlet property="imageView" destination="vlA-oe-Cb8" id="4Bj-az-87X"/>
                 <outlet property="likeLabel" destination="xIe-NH-gEA" id="ssc-Vy-YJK"/>
                 <outlet property="nameTextField" destination="6KB-Oz-OQc" id="O4q-Xw-nFP"/>
+                <outlet property="saveButton" destination="HHk-zq-ILh" id="Ohc-ib-DlO"/>
             </connections>
             <point key="canvasLocation" x="147" y="425"/>
         </view>

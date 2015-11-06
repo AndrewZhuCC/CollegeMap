@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *likeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 
 @end
@@ -56,6 +58,17 @@
                                      NSLog(@"Image download success");
                                  }
                              }];
+    
+    NSArray *views = @[self, self.saveButton, self.cancelButton];
+    [self setupLayers: views];
+}
+
+- (void)setupLayers: (NSArray *)views
+{
+    for (UIView *aView in views) {
+        aView.layer.cornerRadius  = 6;
+        aView.layer.masksToBounds = YES;
+    }
 }
 
 #pragma mark - Button Action

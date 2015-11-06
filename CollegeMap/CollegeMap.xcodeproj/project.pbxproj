@@ -19,6 +19,10 @@
 		4906F0C91BEC52FE00FF2E28 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 4906F0BB1BEC52FE00FF2E28 /* UIImage+ImageEffects.m */; };
 		4906F0CA1BEC52FE00FF2E28 /* UIView+TYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4906F0BD1BEC52FE00FF2E28 /* UIView+TYAlertView.m */; };
 		4906F0CB1BEC52FE00FF2E28 /* UIView+TYAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4906F0BF1BEC52FE00FF2E28 /* UIView+TYAutoLayout.m */; };
+		4906F0D11BEC9B0900FF2E28 /* BarcodeItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4906F0CF1BEC9B0900FF2E28 /* BarcodeItem.xcdatamodeld */; };
+		4906F0D41BEC9CDA00FF2E28 /* AZImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4906F0D31BEC9CDA00FF2E28 /* AZImageTransformer.m */; };
+		4906F0D71BEC9E3C00FF2E28 /* BarcodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4906F0D61BEC9E3C00FF2E28 /* BarcodeItem.m */; };
+		4906F0DA1BEC9FC700FF2E28 /* BarcodeItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4906F0D91BEC9FC700FF2E28 /* BarcodeItemStore.m */; };
 		49B2967B1BE871E9008CA3CF /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B296771BE871E9008CA3CF /* HomePageViewController.m */; };
 		49B2967C1BE871E9008CA3CF /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B296781BE871E9008CA3CF /* HomePageViewController.xib */; };
 		49B296821BE87220008CA3CF /* HomePageTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B296811BE87220008CA3CF /* HomePageTableViewDataSource.m */; };
@@ -76,6 +80,13 @@
 		4906F0BD1BEC52FE00FF2E28 /* UIView+TYAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+TYAlertView.m"; path = "UI/TYalert/UIView+TYAlertView.m"; sourceTree = "<group>"; };
 		4906F0BE1BEC52FE00FF2E28 /* UIView+TYAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+TYAutoLayout.h"; path = "UI/TYalert/UIView+TYAutoLayout.h"; sourceTree = "<group>"; };
 		4906F0BF1BEC52FE00FF2E28 /* UIView+TYAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+TYAutoLayout.m"; path = "UI/TYalert/UIView+TYAutoLayout.m"; sourceTree = "<group>"; };
+		4906F0D01BEC9B0900FF2E28 /* BarcodeItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BarcodeItem.xcdatamodel; sourceTree = "<group>"; };
+		4906F0D21BEC9CDA00FF2E28 /* AZImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AZImageTransformer.h; path = Model/AZImageTransformer.h; sourceTree = "<group>"; };
+		4906F0D31BEC9CDA00FF2E28 /* AZImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AZImageTransformer.m; path = Model/AZImageTransformer.m; sourceTree = "<group>"; };
+		4906F0D51BEC9E3C00FF2E28 /* BarcodeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarcodeItem.h; path = Model/BarcodeItem.h; sourceTree = "<group>"; };
+		4906F0D61BEC9E3C00FF2E28 /* BarcodeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarcodeItem.m; path = Model/BarcodeItem.m; sourceTree = "<group>"; };
+		4906F0D81BEC9FC700FF2E28 /* BarcodeItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarcodeItemStore.h; path = Model/BarcodeItemStore.h; sourceTree = "<group>"; };
+		4906F0D91BEC9FC700FF2E28 /* BarcodeItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarcodeItemStore.m; path = Model/BarcodeItemStore.m; sourceTree = "<group>"; };
 		49B296761BE871E9008CA3CF /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageViewController.h; path = UI/HomePageViewController.h; sourceTree = "<group>"; };
 		49B296771BE871E9008CA3CF /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageViewController.m; path = UI/HomePageViewController.m; sourceTree = "<group>"; };
 		49B296781BE871E9008CA3CF /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePageViewController.xib; path = UI/HomePageViewController.xib; sourceTree = "<group>"; };
@@ -272,6 +283,13 @@
 			children = (
 				49E71E421BE9A20C00A0E0B1 /* NetWorkController.h */,
 				49E71E431BE9A20C00A0E0B1 /* NetWorkController.m */,
+				4906F0CF1BEC9B0900FF2E28 /* BarcodeItem.xcdatamodeld */,
+				4906F0D51BEC9E3C00FF2E28 /* BarcodeItem.h */,
+				4906F0D61BEC9E3C00FF2E28 /* BarcodeItem.m */,
+				4906F0D81BEC9FC700FF2E28 /* BarcodeItemStore.h */,
+				4906F0D91BEC9FC700FF2E28 /* BarcodeItemStore.m */,
+				4906F0D21BEC9CDA00FF2E28 /* AZImageTransformer.h */,
+				4906F0D31BEC9CDA00FF2E28 /* AZImageTransformer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -469,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E71E441BE9A20C00A0E0B1 /* NetWorkController.m in Sources */,
+				4906F0DA1BEC9FC700FF2E28 /* BarcodeItemStore.m in Sources */,
 				49CD68951BE8849B00D83F73 /* AZPlusButton.m in Sources */,
 				4906F0C91BEC52FE00FF2E28 /* UIImage+ImageEffects.m in Sources */,
 				49CD688F1BE87CB100D83F73 /* AZNavigationController.m in Sources */,
@@ -476,6 +495,7 @@
 				4906F0CA1BEC52FE00FF2E28 /* UIView+TYAlertView.m in Sources */,
 				4906F0C11BEC52FE00FF2E28 /* TYAlertController+BlurEffects.m in Sources */,
 				49CD689C1BE888B000D83F73 /* ScanViewController.m in Sources */,
+				4906F0D41BEC9CDA00FF2E28 /* AZImageTransformer.m in Sources */,
 				4906F0C71BEC52FE00FF2E28 /* TYBaseAnimation.m in Sources */,
 				4906F0C41BEC52FE00FF2E28 /* TYAlertFadeAnimation.m in Sources */,
 				49DCF7051BE7133E0036AEEE /* AppDelegate.m in Sources */,
@@ -483,8 +503,10 @@
 				4906F0C51BEC52FE00FF2E28 /* TYAlertScaleFadeAnimation.m in Sources */,
 				4906F0C31BEC52FE00FF2E28 /* TYAlertDropDownAnimation.m in Sources */,
 				49E97C991BE89C120009673E /* QRCodeView.m in Sources */,
+				4906F0D11BEC9B0900FF2E28 /* BarcodeItem.xcdatamodeld in Sources */,
 				4906F0C01BEC52FE00FF2E28 /* TYAlertController.m in Sources */,
 				49DB3A101BEB38AD0062B61F /* AZAlertView.m in Sources */,
+				4906F0D71BEC9E3C00FF2E28 /* BarcodeItem.m in Sources */,
 				4906F0C21BEC52FE00FF2E28 /* TYAlertController+TransitionAnimate.m in Sources */,
 				49DCF7021BE7133E0036AEEE /* main.m in Sources */,
 				4906F0C81BEC52FE00FF2E28 /* TYShowAlertView.m in Sources */,
@@ -703,6 +725,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4906F0CF1BEC9B0900FF2E28 /* BarcodeItem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4906F0D01BEC9B0900FF2E28 /* BarcodeItem.xcdatamodel */,
+			);
+			currentVersion = 4906F0D01BEC9B0900FF2E28 /* BarcodeItem.xcdatamodel */;
+			name = BarcodeItem.xcdatamodeld;
+			path = Model/BarcodeItem.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 49DCF6F41BE7133E0036AEEE /* Project object */;
 }
