@@ -10,4 +10,6 @@
 
 @interface ScanViewController : UIViewController
 
+- (void)startCodeReading;
+
 @end

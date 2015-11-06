@@ -7,7 +7,6 @@ target 'CollegeMap' do
 pod 'CYLTabBarController'
 pod ‘Ono’
 pod 'SDWebImage'
-pod ‘KLCPopup’
 end
 
 target 'CollegeMapTests' do

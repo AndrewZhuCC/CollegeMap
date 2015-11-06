@@ -1,6 +1,5 @@
 PODS:
   - CYLTabBarController (1.0.5)
-  - KLCPopup (1.0)
   - Ono (1.2.2)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
@@ -8,13 +7,11 @@ PODS:
 
 DEPENDENCIES:
   - CYLTabBarController
-  - KLCPopup
   - Ono
   - SDWebImage
 
 SPEC CHECKSUMS:
   CYLTabBarController: c758aba2b1aac34be1c217047079ab11b4a18f4a
-  KLCPopup: 76c5a19227977f1e53d85236f9ef42257c168d98
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 

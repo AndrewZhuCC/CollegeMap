@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIViewController"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="AZAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6KB-Oz-OQc" userLabel="name">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" tag="253" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHk-zq-ILh">
+                    <rect key="frame" x="15" y="249" width="40" height="36"/>
+                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="保存"/>
+                    <connections>
+                        <action selector="SaveTheBarcode:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="94s-nB-G7Q"/>
+                    </connections>
+                </button>
+                <switch opaque="NO" tag="254" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZFM-DU-MTy">
+                    <rect key="frame" x="126" y="198" width="51" height="31"/>
+                    <connections>
+                        <action selector="switchAction:" destination="i5M-Pr-FkT" eventType="valueChanged" id="gIr-GN-jUy"/>
+                    </connections>
+                </switch>
+                <button opaque="NO" tag="255" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjx-61-xju">
+                    <rect key="frame" x="245" y="249" width="40" height="36"/>
+                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="关闭"/>
+                    <connections>
+                        <action selector="cancelThis:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="A4d-cb-1R0"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" tag="256" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIe-NH-gEA">
+                    <rect key="frame" x="127" y="229" width="49" height="31"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" tag="252" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vlA-oe-Cb8">
+                    <rect key="frame" x="8" y="32" width="284" height="158"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Sjx-61-xju" secondAttribute="trailing" constant="15" id="1hZ-QC-F43"/>
+                <constraint firstItem="xIe-NH-gEA" firstAttribute="width" secondItem="ZFM-DU-MTy" secondAttribute="width" id="2Ma-Zt-S6G"/>
+                <constraint firstAttribute="bottom" secondItem="Sjx-61-xju" secondAttribute="bottom" constant="15" id="4Wa-Q9-i7Y"/>
+                <constraint firstAttribute="bottom" secondItem="ZFM-DU-MTy" secondAttribute="bottom" constant="71" id="7W5-es-9QN"/>
+                <constraint firstAttribute="centerX" secondItem="ZFM-DU-MTy" secondAttribute="centerX" id="8Cq-l4-m6l"/>
+                <constraint firstItem="6KB-Oz-OQc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9SO-Lo-k2P"/>
+                <constraint firstItem="HHk-zq-ILh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Dsm-G8-uGA"/>
+                <constraint firstAttribute="bottom" secondItem="HHk-zq-ILh" secondAttribute="bottom" constant="15" id="OTF-pc-Joq"/>
+                <constraint firstItem="vlA-oe-Cb8" firstAttribute="top" secondItem="6KB-Oz-OQc" secondAttribute="bottom" constant="2" id="OXZ-cx-sCD"/>
+                <constraint firstItem="xIe-NH-gEA" firstAttribute="centerX" secondItem="ZFM-DU-MTy" secondAttribute="centerX" constant="1" id="QEb-0G-fWi"/>
+                <constraint firstItem="vlA-oe-Cb8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="QKh-tq-jsD"/>
+                <constraint firstAttribute="trailing" secondItem="6KB-Oz-OQc" secondAttribute="trailing" id="Uw1-tH-pKB"/>
+                <constraint firstItem="ZFM-DU-MTy" firstAttribute="top" secondItem="vlA-oe-Cb8" secondAttribute="bottom" constant="8" id="W07-YN-egu"/>
+                <constraint firstAttribute="trailing" secondItem="vlA-oe-Cb8" secondAttribute="trailing" constant="8" id="oKa-hi-NSg"/>
+                <constraint firstItem="Sjx-61-xju" firstAttribute="height" secondItem="HHk-zq-ILh" secondAttribute="height" id="psD-y8-Ncz"/>
+                <constraint firstItem="xIe-NH-gEA" firstAttribute="height" secondItem="ZFM-DU-MTy" secondAttribute="height" id="rRn-Fk-48p"/>
+                <constraint firstItem="6KB-Oz-OQc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vLi-5F-oMs"/>
+                <constraint firstItem="xIe-NH-gEA" firstAttribute="top" secondItem="ZFM-DU-MTy" secondAttribute="bottom" id="yIx-u9-cPR"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="vlA-oe-Cb8" id="4Bj-az-87X"/>
+                <outlet property="likeLabel" destination="xIe-NH-gEA" id="ssc-Vy-YJK"/>
+                <outlet property="nameTextField" destination="6KB-Oz-OQc" id="O4q-Xw-nFP"/>
+            </connections>
+            <point key="canvasLocation" x="147" y="425"/>
+        </view>
+    </objects>
+</document>

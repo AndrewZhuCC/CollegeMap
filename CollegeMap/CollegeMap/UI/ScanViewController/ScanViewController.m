@@ -10,9 +10,10 @@
 #import <AVFoundation/AVFoundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "QRCodeView.h"
-#import "AZAlertViewController.h"
-#import "KLCPopup.h"
+#import "AZAlertView.h"
 #import "NetWorkController.h"
+#import "UIView+TYAlertView.h"
+#import "TYAlertController+BlurEffects.h"
 
 @interface ScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 
@@ -144,14 +145,13 @@
         if (code.length != 13 && code.length != 8) {
             [_codeView showFailSoon];
         } else {
-            [self stopReading];
+            [_session stopRunning];
             
             NSDictionary *barcodeResult = [self getBarcodeResult:code];
             
             [self performSelectorOnMainThread:@selector(showPopUpView:) withObject:barcodeResult waitUntilDone:YES];
         }
     }
-    NSLog(@"-------------------");
 }
 
 - (void)showPopUpView: (NSDictionary *)barcodeResult
@@ -159,18 +159,19 @@
     NSString *title = [barcodeResult objectForKey:ZAZResultTitle];
     NSURL *imageURL = [barcodeResult objectForKey:ZAZResultImage];
     
-    AZAlertViewController *azViewController = [[AZAlertViewController alloc]init];
-    [azViewController AZSetFrame:CGRectMake(10, 10, 250, 250)];
-    [azViewController AZSetBarcodeResultWithTitle:title andImageURL:imageURL];
-    __block KLCPopup *temppopUp =
-    [KLCPopup popupWithContentView:azViewController.view
-                          showType:KLCPopupShowTypeFadeIn
-                       dismissType:KLCPopupDismissTypeFadeOut
-                          maskType:KLCPopupMaskTypeDimmed
-          dismissOnBackgroundTouch:YES
-             dismissOnContentTouch:NO];
+    AZAlertView *azView = [[AZAlertView alloc]initWithTY:self andFrame:CGRectMake(0, 0, 300, 300)];
+    azView.ScanVC = self;
+    [azView AZSetBarcodeResultWithTitle:title andImageURL:imageURL];
     
-    [temppopUp show];
+    TYAlertController *tyController = [TYAlertController alertControllerWithAlertView:azView preferredStyle:TYAlertControllerStyleAlert];
+
+    [tyController setBlurEffectWithView:self.view];
+    
+    __weak id wself = self;
+    
+    [self presentViewController:tyController animated:YES completion:^{
+        [wself stopReading];
+    }];
 }
 
 - (NSDictionary *)getBarcodeResult:(NSString *)barcode

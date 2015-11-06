@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AZAlertViewController : UIViewController
+@class ScanViewController;
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@interface AZAlertView : UIView
 
-- (void)AZSetFrame:(CGRect) frame;
+@property (nonatomic, weak) ScanViewController *ScanVC;
+
+- (instancetype)initWithTY:(id)TYController andFrame:(CGRect)frame;
 - (void)AZSetBarcodeResultWithTitle: (NSString *)title andImageURL: (NSURL *)imageURl;
 
 @end
