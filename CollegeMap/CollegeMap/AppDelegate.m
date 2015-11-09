@@ -95,11 +95,11 @@
      *  每个子viewController对应一个dictionary
      */
     NSDictionary *dic1 = @{
-                           CYLTabBarItemTitle : @"Home"
+                           CYLTabBarItemTitle : @"历史记录"
                            };
     
     NSDictionary *dic2 = @{
-                           CYLTabBarItemTitle : @"Setting"
+                           CYLTabBarItemTitle : @"设置"
                            };
     
     /**

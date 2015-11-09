@@ -174,11 +174,11 @@
 {
     NSArray *aArray = [tempString componentsSeparatedByString:@"\""];
     
-    if ([aArray objectAtIndex:1]) {
+    if (aArray.count > 1) {
         NSURL *result = [NSURL URLWithString:[aArray objectAtIndex:1]];
         return result;
     } else {
-        NSURL *result = [NSURL URLWithString:@""];
+        NSURL *result = [NSURL URLWithString:@"none"];
         return result;
     }
 }
