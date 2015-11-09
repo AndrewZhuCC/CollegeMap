@@ -79,6 +79,7 @@
                 <outlet property="likeLabel" destination="xIe-NH-gEA" id="ssc-Vy-YJK"/>
                 <outlet property="nameTextField" destination="6KB-Oz-OQc" id="O4q-Xw-nFP"/>
                 <outlet property="saveButton" destination="HHk-zq-ILh" id="Ohc-ib-DlO"/>
+                <outlet property="switchButton" destination="ZFM-DU-MTy" id="qDD-6f-d4A"/>
             </connections>
             <point key="canvasLocation" x="147" y="425"/>
         </view>

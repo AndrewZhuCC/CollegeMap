@@ -15,39 +15,31 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" tag="261" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZO-Ie-tpr">
-                        <rect key="frame" x="8" y="8" width="54" height="38"/>
+                        <rect key="frame" x="8" y="8" width="243" height="38"/>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <switch opaque="NO" tag="262" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vr4-FL-VoM">
-                        <rect key="frame" x="271" y="23" width="51" height="31"/>
+                        <rect key="frame" x="259" y="23" width="51" height="31"/>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" tag="263" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXz-aD-Cb3">
-                        <rect key="frame" x="271" y="0.0" width="49" height="23"/>
+                        <rect key="frame" x="263" y="0.0" width="49" height="23"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" clipsSubviews="YES" tag="264" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Be-DP-3Mf">
-                        <rect key="frame" x="70" y="10" width="193" height="34"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="PXz-aD-Cb3" firstAttribute="width" secondItem="Vr4-FL-VoM" secondAttribute="width" id="15K-9n-8mj"/>
                     <constraint firstItem="OZO-Ie-tpr" firstAttribute="top" secondItem="uAM-6n-1JR" secondAttribute="topMargin" id="7lq-Rp-A90"/>
-                    <constraint firstItem="2Be-DP-3Mf" firstAttribute="leading" secondItem="OZO-Ie-tpr" secondAttribute="trailing" constant="8" id="E5w-QL-jCP"/>
-                    <constraint firstItem="2Be-DP-3Mf" firstAttribute="top" secondItem="uAM-6n-1JR" secondAttribute="topMargin" constant="2" id="Es7-kz-tTd"/>
-                    <constraint firstItem="PXz-aD-Cb3" firstAttribute="leading" secondItem="2Be-DP-3Mf" secondAttribute="trailing" constant="8" id="GxS-fH-fCl"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Vr4-FL-VoM" secondAttribute="bottom" constant="-8" id="JWv-2i-PJM"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Vr4-FL-VoM" secondAttribute="trailing" constant="-8" id="NoQ-JO-5EB"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="PXz-aD-Cb3" secondAttribute="trailing" constant="-8" id="Ntv-kj-TjO"/>
+                    <constraint firstItem="Vr4-FL-VoM" firstAttribute="leading" secondItem="OZO-Ie-tpr" secondAttribute="trailing" constant="8" id="NBb-eQ-RsE"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Vr4-FL-VoM" secondAttribute="trailing" constant="4" id="NoQ-JO-5EB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="PXz-aD-Cb3" secondAttribute="trailing" id="Ntv-kj-TjO"/>
                     <constraint firstItem="OZO-Ie-tpr" firstAttribute="leading" secondItem="uAM-6n-1JR" secondAttribute="leadingMargin" id="Zo1-GF-MxP"/>
                     <constraint firstItem="OZO-Ie-tpr" firstAttribute="bottom" secondItem="uAM-6n-1JR" secondAttribute="bottomMargin" id="f0I-YX-mtb"/>
                     <constraint firstItem="PXz-aD-Cb3" firstAttribute="top" secondItem="uAM-6n-1JR" secondAttribute="topMargin" constant="-8" id="nTZ-36-vTC"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="2Be-DP-3Mf" secondAttribute="bottom" constant="2" id="oF9-v0-FrE"/>
                     <constraint firstItem="Vr4-FL-VoM" firstAttribute="top" secondItem="PXz-aD-Cb3" secondAttribute="bottom" id="tdJ-sZ-vIj"/>
                 </constraints>
             </tableViewCellContentView>

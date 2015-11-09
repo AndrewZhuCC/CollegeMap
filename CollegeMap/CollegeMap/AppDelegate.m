@@ -61,6 +61,7 @@
         if ([[BarcodeItemStore sharedInstance].managedObjectContext save:&error] == NO) {
             NSLog(@"save error(%@ - %@)",error,[error description]);
         }
+        NSLog(@"save changes");
     }
 }
 

@@ -3,10 +3,11 @@
     <entity name="BarcodeItem" representedClassName="BarcodeItem" syncable="YES">
         <attribute name="barcode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="isLiked" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="itemImage" optional="YES" attributeType="Transformable" valueTransformerName="AZImageTransformer" syncable="YES"/>
         <attribute name="itemName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BarcodeItem" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="BarcodeItem" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

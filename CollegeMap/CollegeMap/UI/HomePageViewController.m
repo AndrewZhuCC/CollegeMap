@@ -8,6 +8,10 @@
 
 #import "HomePageViewController.h"
 #import "HomePageTableViewDataSource.h"
+#import "AZAlertView.h"
+#import "TYAlertController.h"
+#import "BarcodeItemStore.h"
+#import "TYAlertController+BlurEffects.h"
 
 @interface HomePageViewController () <UITableViewDelegate>
 
@@ -30,11 +34,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableViewDatasource refreshData];
+}
+
 #pragma mark - TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    AZAlertView *azView = [[AZAlertView alloc]initWithTY:self andFrame:CGRectMake(0, 0, 300, 300)];
+    
+    BarcodeItem *item = [[BarcodeItemStore sharedInstance] itemAtIndex:indexPath.row];
+    [azView showPopUpPreView:item dataSource:self.tableViewDatasource];
+    
+    TYAlertController *tyController = [TYAlertController alertControllerWithAlertView:azView preferredStyle:TYAlertControllerStyleAlert];
+    
+    [tyController setBlurEffectWithView:self.view];
+    
+    [self presentViewController:tyController animated:YES completion:nil];
 }
 
 #pragma mark - TableVIewDatasource

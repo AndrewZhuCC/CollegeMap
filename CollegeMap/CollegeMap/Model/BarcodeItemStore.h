@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-@class BarcodeItem;
+#import "BarcodeItem.h"
 
 @interface BarcodeItemStore : NSObject
 
@@ -17,5 +17,6 @@
 + (BarcodeItemStore *)sharedInstance;
 - (BarcodeItem *)creatItem;
 - (NSArray *)allItem;
+- (BarcodeItem *)itemAtIndex: (NSUInteger)index;
 
 @end

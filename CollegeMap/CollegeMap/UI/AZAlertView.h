@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class ScanViewController;
+@class BarcodeItem;
 
-@interface AZAlertView : UIView
+@interface AZAlertView : UIControl
 
 @property (nonatomic, weak) ScanViewController *ScanVC;
 
 - (instancetype)initWithTY:(id)TYController andFrame:(CGRect)frame;
-- (void)AZSetBarcodeResultWithTitle: (NSString *)title andImageURL: (NSURL *)imageURl;
-
+- (void)AZSetBarcodeResultWithTitle: (NSString *)title andImageURL: (NSURL *)imageURl andBarcode: (NSString *)barcode;
+- (void)showPopUpPreView: (BarcodeItem *)item dataSource:(id)dataSource;
 @end

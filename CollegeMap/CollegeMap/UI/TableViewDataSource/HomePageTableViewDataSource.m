@@ -12,7 +12,8 @@
 
 @interface HomePageTableViewDataSource ()
 
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, weak) UITableView *tableView;
 
 @end
 
@@ -33,6 +34,7 @@
 {
     static NSString *identifier = @"HomePageCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    self.tableView = tableView;
     
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HomePageTableViewCell" owner:cell options:nil];
@@ -40,21 +42,50 @@
         UILabel *nameLabel = (UILabel *)[cell viewWithTag:261];
         UISwitch *switchB = (UISwitch *)[cell viewWithTag:262];
         UILabel *likeLabel = (UILabel *)[cell viewWithTag:263];
-        UITextField *textField = (UITextField *)[cell viewWithTag:264];
         BarcodeItem *item = (BarcodeItem *)[self.items objectAtIndex:indexPath.row];
         
+        [switchB addTarget:self action:@selector(switchButtonChangeValue:) forControlEvents:UIControlEventValueChanged];
+        
         nameLabel.text = item.itemName;
+        switchB.on = item.isLiked;
+        likeLabel.text = item.isLiked ? @"YES" : @"NO";
     }
     
     return cell;
 }
 
+- (void)switchButtonChangeValue: (id)sender
+{
+    UITableViewCell *cell = (UITableViewCell *)[[sender superview] superview];
+    UISwitch *switchButton = (UISwitch *)sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    BarcodeItem *item = [self.items objectAtIndex:indexPath.row];
+    
+    item.isLiked = switchButton.isOn ? YES : NO;
+    UILabel *likeLabel = (UILabel *)[cell viewWithTag:263];
+    likeLabel.text = item.isLiked ? @"YES" : @"NO";
+    NSLog(@"item: %@",item);
+}
+
 - (NSArray *)items
 {
     if (_items == nil) {
-        _items = [[BarcodeItemStore sharedInstance] allItem];
+        _items = [NSMutableArray arrayWithArray:[[BarcodeItemStore sharedInstance] allItem]];
     }
     return _items;
+}
+
+- (void)refreshData
+{
+    [self.items removeAllObjects];
+    [self.items addObjectsFromArray:[[BarcodeItemStore sharedInstance] allItem]];
+    
+    [self.tableView reloadData];
+}
+
+- (void)dealloc
+{
+    NSLog(@"table view data source dealloc");
 }
 
 @end

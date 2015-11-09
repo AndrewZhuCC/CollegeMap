@@ -21,6 +21,7 @@
     AVCaptureSession           * _session;
     AVCaptureVideoPreviewLayer * _videoLayer;
     QRCodeView                 * _codeView;
+    NSString                   * _barcode;
 }
 
 @end
@@ -141,6 +142,7 @@
         NSLog(@"%@",metadataObject.stringValue);
         
         NSString *code = metadataObject.stringValue;
+        _barcode = code;
         
         if (code.length != 13 && code.length != 8) {
             [_codeView showFailSoon];
@@ -161,7 +163,7 @@
     
     AZAlertView *azView = [[AZAlertView alloc]initWithTY:self andFrame:CGRectMake(0, 0, 300, 300)];
     azView.ScanVC = self;
-    [azView AZSetBarcodeResultWithTitle:title andImageURL:imageURL];
+    [azView AZSetBarcodeResultWithTitle:title andImageURL:imageURL andBarcode:_barcode];
     
     TYAlertController *tyController = [TYAlertController alertControllerWithAlertView:azView preferredStyle:TYAlertControllerStyleAlert];
 

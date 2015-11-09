@@ -60,7 +60,7 @@
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
     if (_persistentStoreCoordinator == nil) {
-        _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_managedObjectModel];
+        _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
         NSURL *storeURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
         storeURL = [storeURL URLByAppendingPathComponent:@"BarcodeItem.sqlite"];
         NSError *error = nil;
@@ -98,6 +98,12 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
     return [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+}
+
+- (BarcodeItem *)itemAtIndex: (NSUInteger)index
+{
+    NSArray *items = [self allItem];
+    return [items objectAtIndex:index];
 }
 
 @end

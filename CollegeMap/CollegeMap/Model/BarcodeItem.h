@@ -2,7 +2,7 @@
 //  BarcodeItem.h
 //  CollegeMap
 //
-//  Created by Andrew on 15/11/6.
+//  Created by Andrew on 15/11/9.
 //  Copyright (c) 2015年 Tecomtech. All rights reserved.
 //
 
@@ -13,9 +13,10 @@
 
 @interface BarcodeItem : NSManagedObject
 
-@property (nonatomic, retain) NSString * itemName;
 @property (nonatomic, retain) NSString * barcode;
-@property (nonatomic, retain) UIImage  * itemImage;
-@property (nonatomic, retain) NSDate   * dateCreated;
+@property (nonatomic, retain) NSDate * dateCreated;
+@property (nonatomic, retain) UIImage * itemImage;
+@property (nonatomic, retain) NSString * itemName;
+@property (nonatomic)         BOOL isLiked;
 
 @end
