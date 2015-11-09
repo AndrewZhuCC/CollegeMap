@@ -7,6 +7,7 @@
 //
 
 #import "AZNavigationController.h"
+#import "UIImage+ImageScale.h"
 
 @interface AZNavigationController ()
 
@@ -20,6 +21,10 @@
     
     [self.navigationBar setOpaque:YES];
     [self.navigationBar setTranslucent:NO];
+    
+    CGSize size = CGSizeMake(self.navigationBar.frame.size.width, [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationBar.frame.size.height );
+    UIImage *image = [[UIImage imageNamed:@"Title_BG"] changeSizeToSize:size];
+    [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning {

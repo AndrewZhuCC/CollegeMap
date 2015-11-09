@@ -12,5 +12,6 @@
 @interface UIImage (UIImage_ImageScale)
 
 -(UIImage*)scaleToSize:(CGSize)size;
+- (UIImage *)changeSizeToSize: (CGSize)size;
 
 @end

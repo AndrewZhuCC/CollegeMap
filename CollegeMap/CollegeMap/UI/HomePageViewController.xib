@@ -19,15 +19,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPu-1k-wZu" userLabel="backgroundImage">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="历史记录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tno-fa-0hd" userLabel="历史记录">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="70a-CV-bgc">
-                    <rect key="frame" x="0.0" y="24" width="320" height="431"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -39,11 +32,8 @@
             <constraints>
                 <constraint firstItem="70a-CV-bgc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JCX-05-iXM"/>
                 <constraint firstAttribute="bottom" secondItem="70a-CV-bgc" secondAttribute="bottom" id="Jx0-Vt-9ct"/>
-                <constraint firstAttribute="trailing" secondItem="Tno-fa-0hd" secondAttribute="trailing" id="M72-Bq-geL"/>
-                <constraint firstItem="Tno-fa-0hd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RBt-kA-hBp"/>
-                <constraint firstItem="70a-CV-bgc" firstAttribute="top" secondItem="Tno-fa-0hd" secondAttribute="bottom" id="RIo-hN-KNV"/>
+                <constraint firstItem="70a-CV-bgc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ahP-ay-YOE"/>
                 <constraint firstAttribute="trailing" secondItem="70a-CV-bgc" secondAttribute="trailing" id="lbJ-0l-7Sw"/>
-                <constraint firstItem="Tno-fa-0hd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ys8-Cf-Ynv"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
