@@ -33,6 +33,7 @@
     // Do any additional setup after loading the view from its nib.
     
     [self.view setBackgroundColor:[UIColor blackColor]];
+    [self.navigationController.navigationBar setTintColor:TitleColor];
     
     [self setupBackButton];
     

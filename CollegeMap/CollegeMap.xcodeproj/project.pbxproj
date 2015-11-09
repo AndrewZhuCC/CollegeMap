@@ -90,6 +90,7 @@
 		498244311BF03333003577CF /* UIImage+ImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageScale.m"; path = "UI/UITool/UIImage+ImageScale.m"; sourceTree = "<group>"; };
 		498244361BF03EFA003577CF /* BarcodeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarcodeItem.h; path = Model/BarcodeItem.h; sourceTree = "<group>"; };
 		498244371BF03EFA003577CF /* BarcodeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarcodeItem.m; path = Model/BarcodeItem.m; sourceTree = "<group>"; };
+		498244391BF0746D003577CF /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = CollegeMap/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		49B296761BE871E9008CA3CF /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageViewController.h; path = UI/HomePageViewController.h; sourceTree = "<group>"; };
 		49B296771BE871E9008CA3CF /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageViewController.m; path = UI/HomePageViewController.m; sourceTree = "<group>"; };
 		49B296781BE871E9008CA3CF /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePageViewController.xib; path = UI/HomePageViewController.xib; sourceTree = "<group>"; };
@@ -270,6 +271,7 @@
 			children = (
 				49DCF7001BE7133E0036AEEE /* Info.plist */,
 				49DCF7011BE7133E0036AEEE /* main.m */,
+				498244391BF0746D003577CF /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -654,6 +656,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Sam Hsu (2328J73J2Z)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CollegeMap/PrefixHeader.pch;
 				INFOPLIST_FILE = CollegeMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -666,6 +670,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Sam Hsu (2328J73J2Z)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CollegeMap/PrefixHeader.pch;
 				INFOPLIST_FILE = CollegeMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

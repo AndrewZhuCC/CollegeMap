@@ -10,7 +10,9 @@
 #import "Ono.h"
 
 @interface NetWorkController ()
-
+{
+    BOOL  _isHD;
+}
 @end
 
 @implementation NetWorkController
@@ -24,6 +26,7 @@
  */
 - (NSDictionary *)searchBarcode:(NSString *)barcode
 {
+    _isHD = [[NSUserDefaults standardUserDefaults] boolForKey:HD_SETTING_KEY];
     id htmlURL = [self getURLFromBarcode:barcode];
     
     NSDictionary *dic = [self loadContentOfURLString:htmlURL];
@@ -62,7 +65,7 @@
 - (NSDictionary *)loadContentOfURLString:(NSArray *)htmlURL
 {
     NSURL *titleURL = [htmlURL objectAtIndex:0];
-    NSURL *imageURL = [htmlURL objectAtIndex:1];
+    NSURL *imageURL = _isHD ? [htmlURL objectAtIndex:0] : [htmlURL objectAtIndex:1];
     
     NSDictionary *dic = @{
                           ZAZResultTitle : [self giveMeTitle:titleURL],
@@ -91,38 +94,93 @@
 
 - (NSString *)giveMeTitle:(NSURL *)titleURL
 {
-    ONOXMLDocument *document = [self giveMeDocumentWithURL:titleURL];
-    
-    __block NSString *title = [[NSString alloc]init];
-    
-    NSString *XPathTitle = @"//h3[@class='t']/a";
-    
-    [document enumerateElementsWithXPath:XPathTitle usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
-        title = [element stringValue];
-    }];
-    
-    if (title.length == 0) {
-        title = @"未搜索到该条形码";
+    if (_isHD) {
+        NSString *xpath1 = @"//*[@id=\"1\"]/h3/a";
+        NSString *attribute1 = @"href";
+        NSString *tempString = [self searchStringWithXpath:xpath1 andhtmlURL:titleURL andAttribute:attribute1];
+        NSURL    *tempURL = [NSURL URLWithString:tempString];
+        
+        NSString *xpath2 = @"//*[@id=\"landingImage\"]";
+        NSString *attribute2 = @"alt";
+        NSString *title = [self searchStringWithXpath:xpath2 andhtmlURL:tempURL andAttribute:attribute2];
+        
+        if (title.length == 0) {
+            title = @"未搜索到该条形码";
+        }
+        
+        return title;
+    } else {
+        ONOXMLDocument *document = [self giveMeDocumentWithURL:titleURL];
+        
+        __block NSString *title = [[NSString alloc]init];
+        
+        NSString *XPathTitle = @"//h3[@class='t']/a";
+        
+        [document enumerateElementsWithXPath:XPathTitle usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
+            title = [element stringValue];
+        }];
+        if (title.length == 0) {
+            title = @"未搜索到该条形码";
+        }
+        
+        return title;
     }
-    
-    return title;
 }
 
 - (NSURL *)giveMeImage:(NSURL *)htmlURL
 {
+    if (_isHD) {
+        NSString *xpath1 = @"//*[@id=\"1\"]/h3/a";
+        NSString *attribute1 = @"href";
+        NSString *tempString = [self searchStringWithXpath:xpath1 andhtmlURL:htmlURL andAttribute:attribute1];
+        NSURL    *tempURL = [NSURL URLWithString:tempString];
+        
+        NSString *xpath2 = @"//*[@id=\"landingImage\"]";
+        NSString *attribute2 = @"data-a-dynamic-image";
+        NSString *imageString = [self searchStringWithXpath:xpath2 andhtmlURL:tempURL andAttribute:attribute2];
+        NSURL    *imageURL = [self tempString2URL:imageString];
+        
+        return imageURL;
+    } else {
+        ONOXMLDocument *document = [self giveMeDocumentWithURL:htmlURL];
+        
+        __block NSString *imageString = [[NSString alloc]init];
+        
+        NSString *XPathImage = @"/html/body/div[2]/a[1]/img";
+        
+        [document enumerateElementsWithXPath:XPathImage usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
+            imageString = (NSString *)[element valueForAttribute:@"src"];
+        }];
+        
+        NSURL *imageURL = [NSURL URLWithString:imageString];
+        
+        return imageURL;
+    }
+}
+
+- (NSString *)searchStringWithXpath: (NSString *)XPath andhtmlURL: (NSURL *)htmlURL andAttribute: (NSString *)attribute
+{
     ONOXMLDocument *document = [self giveMeDocumentWithURL:htmlURL];
     
-    __block NSString *imageString = [[NSString alloc]init];
-    
-    NSString *XPathImage = @"/html/body/div[2]/a[1]/img";
-    
-    [document enumerateElementsWithXPath:XPathImage usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
-        imageString = (NSString *)[element valueForAttribute:@"src"];
+    __block NSString *tempString = [[NSString alloc]init];
+    [document enumerateElementsWithXPath:XPath usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
+        tempString = (NSString *)[element valueForAttribute:attribute];
     }];
     
-    NSURL *imageURL = [NSURL URLWithString:imageString];
+    return tempString;
+}
+
+- (NSURL *)tempString2URL: (NSString *)tempString
+{
+    NSArray *aArray = [tempString componentsSeparatedByString:@"\""];
     
-    return imageURL;
+    if ([aArray objectAtIndex:1]) {
+        NSURL *result = [NSURL URLWithString:[aArray objectAtIndex:1]];
+        return result;
+    } else {
+        NSURL *result = [NSURL URLWithString:@""];
+        return result;
+    }
 }
 
 @end

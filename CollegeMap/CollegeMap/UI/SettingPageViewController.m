@@ -9,6 +9,11 @@
 #import "SettingPageViewController.h"
 
 @interface SettingPageViewController ()
+{
+    BOOL _isHD;
+}
+@property (weak, nonatomic) IBOutlet UISwitch *HDSwitch;
+@property (nonatomic, strong) NSUserDefaults *defaults;
 
 @end
 
@@ -18,11 +23,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    _defaults = userDefaults;
+
+    _HDSwitch.on = [_defaults boolForKey:HD_SETTING_KEY];
+    _isHD = _HDSwitch.isOn;
+    [_defaults setBool:_isHD forKey:HD_SETTING_KEY];
+    [_defaults synchronize];
+    
+    self.title = @"设置";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)HDSwitch:(id)sender {
+    UISwitch *button  = (UISwitch *)sender;
+    _isHD = button.on;
+    [_defaults setBool:_isHD forKey:HD_SETTING_KEY];
+    [_defaults synchronize];
 }
 
 /*

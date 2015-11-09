@@ -26,7 +26,7 @@
     [super viewDidLoad];
 
     [self setupHomePageTableViewDatasource];
-    
+    self.title = @"历史记录";
 }
 
 - (void)didReceiveMemoryWarning {
