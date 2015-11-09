@@ -15,16 +15,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" tag="261" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZO-Ie-tpr">
-                        <rect key="frame" x="8" y="8" width="243" height="38"/>
+                        <rect key="frame" x="8" y="8" width="247" height="38"/>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" tag="262" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vr4-FL-VoM">
-                        <rect key="frame" x="259" y="23" width="51" height="31"/>
+                    <switch opaque="NO" tag="262" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vr4-FL-VoM">
+                        <rect key="frame" x="263" y="23" width="51" height="31"/>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" tag="263" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXz-aD-Cb3">
                         <rect key="frame" x="263" y="0.0" width="49" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="49" id="ZuN-48-JBJ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -35,7 +38,7 @@
                     <constraint firstItem="OZO-Ie-tpr" firstAttribute="top" secondItem="uAM-6n-1JR" secondAttribute="topMargin" id="7lq-Rp-A90"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Vr4-FL-VoM" secondAttribute="bottom" constant="-8" id="JWv-2i-PJM"/>
                     <constraint firstItem="Vr4-FL-VoM" firstAttribute="leading" secondItem="OZO-Ie-tpr" secondAttribute="trailing" constant="8" id="NBb-eQ-RsE"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Vr4-FL-VoM" secondAttribute="trailing" constant="4" id="NoQ-JO-5EB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Vr4-FL-VoM" secondAttribute="trailing" id="NoQ-JO-5EB"/>
                     <constraint firstAttribute="trailingMargin" secondItem="PXz-aD-Cb3" secondAttribute="trailing" id="Ntv-kj-TjO"/>
                     <constraint firstItem="OZO-Ie-tpr" firstAttribute="leading" secondItem="uAM-6n-1JR" secondAttribute="leadingMargin" id="Zo1-GF-MxP"/>
                     <constraint firstItem="OZO-Ie-tpr" firstAttribute="bottom" secondItem="uAM-6n-1JR" secondAttribute="bottomMargin" id="f0I-YX-mtb"/>
