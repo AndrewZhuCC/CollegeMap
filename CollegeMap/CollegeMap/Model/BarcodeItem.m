@@ -16,6 +16,7 @@
 @dynamic itemImage;
 @dynamic itemName;
 @dynamic isLiked;
+@dynamic valueInRMB;
 
 - (void)awakeFromInsert
 {

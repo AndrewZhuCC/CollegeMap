@@ -51,6 +51,12 @@
                     <rect key="frame" x="8" y="32" width="284" height="158"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo0-AJ-8XD" userLabel="valueLabel">
+                    <rect key="frame" x="144" y="262" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -67,11 +73,13 @@
                 <constraint firstItem="vlA-oe-Cb8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="QKh-tq-jsD"/>
                 <constraint firstAttribute="trailing" secondItem="6KB-Oz-OQc" secondAttribute="trailing" id="Uw1-tH-pKB"/>
                 <constraint firstItem="ZFM-DU-MTy" firstAttribute="top" secondItem="vlA-oe-Cb8" secondAttribute="bottom" constant="8" id="W07-YN-egu"/>
+                <constraint firstItem="eo0-AJ-8XD" firstAttribute="top" secondItem="xIe-NH-gEA" secondAttribute="bottom" constant="2" id="fUL-gI-In8"/>
                 <constraint firstAttribute="trailing" secondItem="vlA-oe-Cb8" secondAttribute="trailing" constant="8" id="oKa-hi-NSg"/>
                 <constraint firstItem="Sjx-61-xju" firstAttribute="height" secondItem="HHk-zq-ILh" secondAttribute="height" id="psD-y8-Ncz"/>
                 <constraint firstItem="xIe-NH-gEA" firstAttribute="height" secondItem="ZFM-DU-MTy" secondAttribute="height" id="rRn-Fk-48p"/>
                 <constraint firstItem="6KB-Oz-OQc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vLi-5F-oMs"/>
                 <constraint firstItem="xIe-NH-gEA" firstAttribute="top" secondItem="ZFM-DU-MTy" secondAttribute="bottom" id="yIx-u9-cPR"/>
+                <constraint firstItem="eo0-AJ-8XD" firstAttribute="centerX" secondItem="xIe-NH-gEA" secondAttribute="centerX" constant="-8" id="yXh-En-yw0"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -82,6 +90,7 @@
                 <outlet property="nameTextField" destination="6KB-Oz-OQc" id="O4q-Xw-nFP"/>
                 <outlet property="saveButton" destination="HHk-zq-ILh" id="Ohc-ib-DlO"/>
                 <outlet property="switchButton" destination="ZFM-DU-MTy" id="qDD-6f-d4A"/>
+                <outlet property="valueLabel" destination="eo0-AJ-8XD" id="v4W-Y4-3yo"/>
             </connections>
             <point key="canvasLocation" x="147" y="425"/>
         </view>

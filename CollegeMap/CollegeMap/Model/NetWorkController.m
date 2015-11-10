@@ -16,54 +16,32 @@
 
 @property (nonatomic, strong) ONOXMLDocument *titleDocument;
 @property (nonatomic, strong) ONOXMLDocument *imageAndHDDocument;
+@property (nonatomic, strong) ONOXMLDocument *valueDocument;
 
 @end
 
 @implementation NetWorkController
 
-/**
- *  通过NSString格式的条形码，输出一个dic
- *
- *  @param barcode NSString格式的条形码
- *
- *  @return 包含商品title和image的字典
- */
+#pragma mark -
+
 - (NSDictionary *)searchBarcode:(NSString *)barcode
 {
     _isHD = [[NSUserDefaults standardUserDefaults] boolForKey:HD_SETTING_KEY];
-    id htmlURL = [self getURLFromBarcode:barcode];
+    [self getURLFromBarcode:barcode];
     
-    NSDictionary *dic = [self loadContentOfURLString:htmlURL];
+    NSDictionary *dic = [self loadContentOfURLString];
     
     return dic;
 }
 
-/**
- *  利用百度在特定站内搜索的功能得到一个URL
- *
- *  @param barcode 条形码
- *
- *  @return 百度搜索的URL
- */
-- (NSArray *)getURLFromBarcode:(NSString *)barcode
+- (void)getURLFromBarcode:(NSString *)barcode
 {
-    NSString *titleHtmlString = @"http://www.baidu.com/s?wd=[barcode]%20site%3Aamazon.cn";
-    
-    
-    /**
-     *  https版本的百度搜索
-     */
-    //    NSString *HtmlString = @"https://www.baidu.com/s?ie=utf-8&wd=[barcode]%20site%3Aamazon.cn";
+    NSString *titleHtmlString = BAIDU_TITLE_HTTP;
     NSString *titleString = [titleHtmlString stringByReplacingOccurrencesOfString:@"[barcode]" withString:barcode];
     NSURL *titleURL = [NSURL URLWithString:titleString];
     _titleDocument = [self giveMeDocumentWithURL:titleURL];
     
-    
-    /**
-     *  电脑端百度图片搜索和手机端百度图片搜索
-     */
-    //    NSString *imageHtmlString = @"http://image.baidu.com/search/index?tn=baiduimage&word=[barcode]%20site%3Aamazon.cn";
-    NSString *imageHtmlString = @"http://image.baidu.com/search/wisemidresult?word=[barcode]+site%3Aamazon.cn&tn=wisemidresult";
+    NSString *imageHtmlString = BAIDU_IMAGE_HTTP;
     NSString *imageString = [imageHtmlString stringByReplacingOccurrencesOfString:@"[barcode]" withString:barcode];
     NSURL *imageURL = [NSURL URLWithString:imageString];
     
@@ -77,22 +55,30 @@
         _imageAndHDDocument = [self giveMeDocumentWithURL:imageURL];
     }
     
+    NSString *valueHtmlString = BAIDU_VALUE_M;
+    NSString *valueString = [valueHtmlString stringByReplacingOccurrencesOfString:@"[barcode]" withString:barcode];
+    NSURL    *valueURL = [NSURL URLWithString:valueString];
+    ONOXMLDocument *tempDocument = [self giveMeDocumentWithURL:valueURL];
     
-    NSArray *result = @[titleURL, imageURL];
-    return result;
+    NSString *xpathValue = @"/html/body/div/div[3]/div[1]/a";
+    NSString *attributeValue = @"href";
+    NSString *valueURLtempString = [self searchStringWithXpath:xpathValue andDocument:tempDocument andAttribute:attributeValue];
+    valueURLtempString = [valueURLtempString stringByReplacingOccurrencesOfString:@"./" withString:BAIDU_VALUE_REPLACE];
+    _valueDocument = [self giveMeDocumentWithURL:[NSURL URLWithString:valueURLtempString]];
+    
 }
 
-- (NSDictionary *)loadContentOfURLString:(NSArray *)htmlURL
+- (NSDictionary *)loadContentOfURLString
 {
-    NSURL *titleURL = [htmlURL objectAtIndex:0];
-    NSURL *imageURL = _isHD ? [htmlURL objectAtIndex:0] : [htmlURL objectAtIndex:1];
-    
     NSDictionary *dic = @{
-                          ZAZResultTitle : [self giveMeTitle:titleURL],
-                          ZAZResultImage : [self giveMeImage:imageURL],
+                          ZAZResultTitle : [self giveMeTitle],
+                          ZAZResultImage : [self giveMeImage],
+                          ZAZResultValue : [self giveMeValue],
                           };
     return dic;
 }
+
+#pragma mark -
 
 - (ONOXMLDocument *)giveMeDocumentWithURL: (NSURL *)htmlURL
 {
@@ -112,7 +98,7 @@
     return document;
 }
 
-- (NSString *)giveMeTitle:(NSURL *)titleURL
+- (NSString *)giveMeTitle
 {
     if (_isHD) {
         NSString *xpath2 = @"//*[@id=\"productTitle\"]";
@@ -136,13 +122,14 @@
     }
 }
 
-- (NSURL *)giveMeImage:(NSURL *)htmlURL
+- (NSURL *)giveMeImage
 {
     if (_isHD) {
         NSString *xpath2 = @"//*[@id=\"landingImage\"]";
         NSString *attribute2 = @"data-a-dynamic-image";
         NSString *imageString = [self searchStringWithXpath:xpath2 andDocument:_imageAndHDDocument andAttribute:attribute2];
         NSURL    *imageURL = [self tempString2URL:imageString];
+        
         if ([imageURL.absoluteString isEqualToString:@"none"]) {
             xpath2 = @"//*[@id=\"imgBlkFront\"]";
             imageString = [self searchStringWithXpath:xpath2 andDocument:_imageAndHDDocument andAttribute:attribute2];
@@ -151,18 +138,23 @@
         
         return imageURL;
     } else {
-        __block NSString *imageString = [[NSString alloc]init];
-        
         NSString *XPathImage = @"/html/body/div[2]/a[1]/img";
-        
-        [_imageAndHDDocument enumerateElementsWithXPath:XPathImage usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
-            imageString = (NSString *)[element valueForAttribute:@"src"];
-        }];
-        
+        NSString *imageString = [self searchStringWithXpath:XPathImage andDocument:_imageAndHDDocument andAttribute:@"src"];
         NSURL *imageURL = [NSURL URLWithString:imageString];
         
         return imageURL;
     }
+}
+
+- (NSString *)giveMeValue
+{
+    NSString *xpath = @"/html/body/div[1]/div[4]/a";
+    NSString *value = [self searchElementValueWithXpath:xpath andDocument:_valueDocument];
+    if (value == nil) {
+        value = @"0";
+    }
+    
+    return value;
 }
 
 #pragma mark - document API

@@ -18,6 +18,7 @@
 {
     NSString    * _title;
     NSURL       * _imageURL;
+    NSString    * _valueInRMB;
     NSString    * _barcode;
     BOOL        _isPreView;
     BarcodeItem * _preViewItem;
@@ -27,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UITextField                 *nameTextField;
 @property (weak, nonatomic) IBOutlet UIImageView                 *imageView;
 @property (weak, nonatomic) IBOutlet UILabel                     *likeLabel;
+@property (weak, nonatomic) IBOutlet UILabel                     *valueLabel;
 @property (weak, nonatomic) IBOutlet UIButton                    *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton                    *cancelButton;
 @property (weak, nonatomic) IBOutlet UISwitch                    *switchButton;
@@ -49,15 +51,17 @@
     return self;
 }
 
-- (void)AZSetBarcodeResultWithTitle: (NSString *)title andImageURL: (NSURL *)imageURl andBarcode: (NSString *)barcode
+- (void)AZSetBarcodeResultWithDic: (NSDictionary *)dic andBarcode: (NSString *)barcode
 {
-    _title = title;
-    _imageURL = imageURl;
+    _title = [dic objectForKey:ZAZResultTitle];
+    _imageURL = [dic objectForKey:ZAZResultImage];
+    _valueInRMB = [dic objectForKey:ZAZResultValue];
     _barcode = barcode;
     _isPreView = NO;
     
     self.nameTextField.text = _title;
     self.nameTextField.delegate = self;
+    self.valueLabel.text = _valueInRMB;
     [self.imageView sd_setImageWithURL:_imageURL
                       placeholderImage:[UIImage imageNamed:@"15"]
                              completed:^(UIImage *image, NSError *error,
@@ -88,15 +92,16 @@
 
 - (void)showPopUpPreView: (BarcodeItem *)item dataSource:(id)dataSource
 {
-    _isPreView = YES;
+    _isPreView   = YES;
     _preViewItem = item;
     self.tableViewDataSource = (HomePageTableViewDataSource *)dataSource;
     
-    self.nameTextField.text = item.itemName;
+    self.nameTextField.text     = item.itemName;
     self.nameTextField.delegate = self;
-    self.imageView.image = [item.itemImage scaleToSize:self.imageView.frame.size];
-    self.switchButton.on = item.isLiked;
-    self.likeLabel.text = item.isLiked ? @"YES" : @"NO";
+    self.valueLabel.text        = item.valueInRMB;
+    self.imageView.image        = [item.itemImage scaleToSize:self.imageView.frame.size];
+    self.switchButton.on        = item.isLiked;
+    self.likeLabel.text         = item.isLiked ? @"YES" : @"NO";
     
     NSArray *views = @[self, self.saveButton, self.cancelButton];
     [self setupLayers: views];
@@ -116,6 +121,7 @@
     BarcodeItem *item = [[BarcodeItemStore sharedInstance] creatItem];
     item.itemName     = self.nameTextField.text;
     item.itemImage    = self.imageView.image;
+    item.valueInRMB   = _valueInRMB;
     item.barcode      = _barcode;
     item.isLiked      = self.switchButton.isOn ? YES : NO;
     

@@ -6,8 +6,9 @@
         <attribute name="isLiked" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="itemImage" optional="YES" attributeType="Transformable" valueTransformerName="AZImageTransformer" syncable="YES"/>
         <attribute name="itemName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valueInRMB" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BarcodeItem" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="BarcodeItem" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

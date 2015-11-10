@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-static NSString *const ZAZResultTitle = @"zazResultTitle";
-static NSString *const ZAZResultImage = @"zazResultImage";
-
 @interface NetWorkController : NSObject
 
 - (NSDictionary *)searchBarcode:(NSString *)barcode;

@@ -16,6 +16,7 @@
 @property (nonatomic, weak) ScanViewController *ScanVC;
 
 - (instancetype)initWithTY:(id)TYController andFrame:(CGRect)frame;
-- (void)AZSetBarcodeResultWithTitle: (NSString *)title andImageURL: (NSURL *)imageURl andBarcode: (NSString *)barcode;
+- (void)AZSetBarcodeResultWithDic: (NSDictionary *)dic andBarcode: (NSString *)barcode;
 - (void)showPopUpPreView: (BarcodeItem *)item dataSource:(id)dataSource;
+
 @end

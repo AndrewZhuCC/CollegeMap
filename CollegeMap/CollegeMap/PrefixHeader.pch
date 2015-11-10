@@ -11,7 +11,22 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #define HD_SETTING_KEY @"azHDSettingKey"
 #define TitleColor [UIColor colorWithRed:210/255.0 green:214/255.0 blue:216/255.0 alpha:1.0]
+
+#define BAIDU_TITLE_HTTP  @"http://www.baidu.com/s?wd=[barcode]%20site%3Aamazon.cn"
+#define BAIDU_TITLE_HTTPS @"https://www.baidu.com/s?ie=utf-8&wd=[barcode]%20site%3Aamazon.cn"
+#define BAIDU_IMAGE_HTTP  @"http://image.baidu.com/search/wisemidresult?word=[barcode]+site%3Aamazon.cn&tn=wisemidresult"
+#define BAIDU_IMAGE_PC    @"http://image.baidu.com/search/index?tn=baiduimage&word=[barcode]%20site%3Aamazon.cn"
+#define BAIDU_VALUE_M     @"http://m.baidu.com/ssid=bc2cd6d3b0aeb1a6b1b4bdadd340//baiduid=0F08E3724699880B0136257E913DAD0C/s?word=[barcode]+site%3Aamazon.cn"
+#define BAIDU_VALUE_REPLACE @"http://m.baidu.com/ssid=bc2cd6d3b0aeb1a6b1b4bdadd340/baiduid=0F08E3724699880B0136257E913DAD0C/"
+
+#define ZAZResultTitle @"zazResultTitle"
+#define ZAZResultImage @"zazResultImage"
+#define ZAZResultValue @"zazResultValue"
 
 #endif

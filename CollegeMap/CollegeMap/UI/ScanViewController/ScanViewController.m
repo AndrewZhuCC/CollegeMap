@@ -159,12 +159,9 @@
 
 - (void)showPopUpView: (NSDictionary *)barcodeResult
 {
-    NSString *title = [barcodeResult objectForKey:ZAZResultTitle];
-    NSURL *imageURL = [barcodeResult objectForKey:ZAZResultImage];
-    
     AZAlertView *azView = [[AZAlertView alloc]initWithTY:self andFrame:CGRectMake(0, 0, 300, 300)];
     azView.ScanVC = self;
-    [azView AZSetBarcodeResultWithTitle:title andImageURL:imageURL andBarcode:_barcode];
+    [azView AZSetBarcodeResultWithDic:barcodeResult andBarcode:_barcode];
     
     TYAlertController *tyController = [TYAlertController alertControllerWithAlertView:azView preferredStyle:TYAlertControllerStyleAlert];
 

@@ -38,6 +38,7 @@
 {
     [super viewWillAppear:animated];
     
+    NSLog(@"table view refresh");
     [self.tableViewDatasource refreshData];
 }
 
