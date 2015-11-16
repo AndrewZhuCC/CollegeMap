@@ -14,14 +14,16 @@
 #import "NetWorkController.h"
 #import "UIView+TYAlertView.h"
 #import "TYAlertController+BlurEffects.h"
+#import "NetWorkController_BarcodeCenter.h"
 
 @interface ScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 
 {
-    AVCaptureSession           * _session;
-    AVCaptureVideoPreviewLayer * _videoLayer;
-    QRCodeView                 * _codeView;
-    NSString                   * _barcode;
+    AVCaptureSession                * _session;
+    AVCaptureVideoPreviewLayer      * _videoLayer;
+    QRCodeView                      * _codeView;
+    NSString                        * _barcode;
+    NetWorkController_BarcodeCenter * _networkCenter;
 }
 
 @end
@@ -38,13 +40,13 @@
     [self setupBackButton];
     
 //    [self startCodeReading];
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationOfBarcodeSearch:) name:SEARCH_BARCODE_DONE object:nil];
     
     [self startCodeReading];
 }
@@ -52,6 +54,8 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:SEARCH_BARCODE_DONE object:nil];
     
     [self stopReading];
 }
@@ -150,9 +154,7 @@
         } else {
             [_session stopRunning];
             
-            NSDictionary *barcodeResult = [self getBarcodeResult:code];
-            
-            [self performSelectorOnMainThread:@selector(showPopUpView:) withObject:barcodeResult waitUntilDone:YES];
+            [self getBarcodeResult:code];
         }
     }
 }
@@ -174,12 +176,30 @@
     }];
 }
 
-- (NSDictionary *)getBarcodeResult:(NSString *)barcode
+- (void)handleNotificationOfBarcodeSearch: (NSNotification *)notification
 {
-    NetWorkController *netCon = [[NetWorkController alloc] init];
-    NSDictionary *result = [netCon searchBarcode:barcode];
+    NSDictionary *dic = notification.userInfo;
+    NSDictionary *dicx = @{
+                           ZAZResultTitle : [dic objectForKey:ITEM_INFO_TITLE],
+                           ZAZResultImage : [dic objectForKey:ITEM_INFO_IMAGEURL],
+                           ZAZResultValue : @"0",
+                           };
+    [self performSelectorOnMainThread:@selector(showPopUpView:) withObject:dicx waitUntilDone:YES];
+}
+
+- (void)getBarcodeResult:(NSString *)barcode
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL isBarcodeCenter = [defaults boolForKey:BARCODE_CENTER_SETTING_KEY];
     
-    return result;
+    if (isBarcodeCenter) {
+        _networkCenter = [[NetWorkController_BarcodeCenter alloc]init];
+        [_networkCenter searchBarcode:barcode];
+    } else {
+        NetWorkController *netCon = [[NetWorkController alloc] init];
+        NSDictionary *result = [netCon searchBarcode:barcode];
+        [self performSelectorOnMainThread:@selector(showPopUpView:) withObject:result waitUntilDone:YES];
+    }
 }
 
 /*

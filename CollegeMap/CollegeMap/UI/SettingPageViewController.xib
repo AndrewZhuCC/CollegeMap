@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingPageViewController">
             <connections>
                 <outlet property="HDSwitch" destination="RMF-Et-Plp" id="3VM-7e-SYH"/>
+                <outlet property="barcodeCenterSwitch" destination="4M0-Rp-Gf7" id="AHq-Ub-qvE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,14 +29,33 @@
                         <action selector="HDSwitch:" destination="-1" eventType="valueChanged" id="WbE-Ex-USP"/>
                     </connections>
                 </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编码中心" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mr8-kH-lKT">
+                    <rect key="frame" x="15" y="75" width="68" height="31"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4M0-Rp-Gf7" userLabel="HDSwitch">
+                    <rect key="frame" x="256" y="75" width="51" height="31"/>
+                    <connections>
+                        <action selector="HDSwitch:" destination="-1" eventType="valueChanged" id="7rK-nN-mO6"/>
+                        <action selector="barcodeCenterSwitch:" destination="-1" eventType="valueChanged" id="h01-ct-obT"/>
+                    </connections>
+                </switch>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="ZpU-pD-Dst" firstAttribute="width" secondItem="mr8-kH-lKT" secondAttribute="width" id="7EE-tE-XZC"/>
                 <constraint firstItem="ZpU-pD-Dst" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="7jM-hD-btb"/>
+                <constraint firstItem="mr8-kH-lKT" firstAttribute="centerY" secondItem="4M0-Rp-Gf7" secondAttribute="centerY" id="8q6-tW-aiJ"/>
                 <constraint firstItem="ZpU-pD-Dst" firstAttribute="height" secondItem="RMF-Et-Plp" secondAttribute="height" id="Bkd-2j-P3g"/>
                 <constraint firstAttribute="trailing" secondItem="RMF-Et-Plp" secondAttribute="trailing" constant="15" id="Cnf-vU-7we"/>
+                <constraint firstItem="mr8-kH-lKT" firstAttribute="top" secondItem="ZpU-pD-Dst" secondAttribute="bottom" constant="29" id="Ppt-AX-GyG"/>
+                <constraint firstItem="ZpU-pD-Dst" firstAttribute="centerX" secondItem="mr8-kH-lKT" secondAttribute="centerX" id="fYU-L3-c4W"/>
+                <constraint firstItem="ZpU-pD-Dst" firstAttribute="height" secondItem="mr8-kH-lKT" secondAttribute="height" id="m4P-R7-FmE"/>
                 <constraint firstItem="RMF-Et-Plp" firstAttribute="centerY" secondItem="ZpU-pD-Dst" secondAttribute="centerY" id="p2D-Hw-dOy"/>
                 <constraint firstItem="ZpU-pD-Dst" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="pPi-B9-Le2"/>
+                <constraint firstItem="RMF-Et-Plp" firstAttribute="centerX" secondItem="4M0-Rp-Gf7" secondAttribute="centerX" id="vhd-nd-CM5"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>

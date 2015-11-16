@@ -16,6 +16,7 @@
 #import <UIKit/UIKit.h>
 
 #define HD_SETTING_KEY @"azHDSettingKey"
+#define BARCODE_CENTER_SETTING_KEY @"barcodeCenterSettingKey"
 #define TitleColor [UIColor colorWithRed:210/255.0 green:214/255.0 blue:216/255.0 alpha:1.0]
 
 #define BAIDU_TITLE_HTTP  @"http://www.baidu.com/s?wd=[barcode]%20site%3Aamazon.cn"
@@ -28,5 +29,13 @@
 #define ZAZResultTitle @"zazResultTitle"
 #define ZAZResultImage @"zazResultImage"
 #define ZAZResultValue @"zazResultValue"
+
+#define SEARCH_BARCODE_DONE @"SearchBarcodeDone"
+#define ITEM_INFO_TITLE @"itemInfoTitle"
+#define ITEM_INFO_BRAND @"itemInfoBrand"
+#define ITEM_INFO_FACTORY @"itemInfoFact"
+#define ITEM_INFO_DESC @"itemInfoDesc"
+#define ITEM_INFO_SPEC @"itemInfoSpec"
+#define ITEM_INFO_IMAGEURL @"itemInfoImageURL"
 
 #endif

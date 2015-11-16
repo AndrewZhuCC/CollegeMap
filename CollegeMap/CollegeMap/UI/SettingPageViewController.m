@@ -11,8 +11,11 @@
 @interface SettingPageViewController ()
 {
     BOOL _isHD;
+    BOOL _isBarcodeCenter;
 }
 @property (weak, nonatomic) IBOutlet UISwitch *HDSwitch;
+@property (strong, nonatomic) IBOutlet UISwitch *barcodeCenterSwitch;
+
 @property (nonatomic, strong) NSUserDefaults *defaults;
 
 @end
@@ -29,6 +32,9 @@
     _HDSwitch.on = [_defaults boolForKey:HD_SETTING_KEY];
     _isHD = _HDSwitch.isOn;
     [_defaults setBool:_isHD forKey:HD_SETTING_KEY];
+    _barcodeCenterSwitch.on = [_defaults boolForKey:BARCODE_CENTER_SETTING_KEY];
+    _isBarcodeCenter = _barcodeCenterSwitch.isOn;
+    [_defaults setBool:_isBarcodeCenter forKey:BARCODE_CENTER_SETTING_KEY];
     [_defaults synchronize];
     
     self.title = @"设置";
@@ -43,6 +49,12 @@
     UISwitch *button  = (UISwitch *)sender;
     _isHD = button.on;
     [_defaults setBool:_isHD forKey:HD_SETTING_KEY];
+    [_defaults synchronize];
+}
+- (IBAction)barcodeCenterSwitch:(id)sender {
+    UISwitch *button  = (UISwitch *)sender;
+    _isBarcodeCenter = button.on;
+    [_defaults setBool:_isBarcodeCenter forKey:BARCODE_CENTER_SETTING_KEY];
     [_defaults synchronize];
 }
 

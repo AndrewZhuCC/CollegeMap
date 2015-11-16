@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CYLTabBarController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0636D291AC276A9BE09E022B53E06D7A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>16ACF35FDB8EAF2E5A8191EA1BCBEA01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>212E463A5B92D892736B962EEF8D4DA7</key>
+		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>560AA35E999BCCEC460004C3A8121723</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6DF189B98B66F3A7CED7B29018E69173</key>
 		<dict>
 			<key>primary</key>
 			<true/>

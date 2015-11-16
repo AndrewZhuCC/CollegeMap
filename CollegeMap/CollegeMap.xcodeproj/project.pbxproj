@@ -24,6 +24,7 @@
 		4906F0DA1BEC9FC700FF2E28 /* BarcodeItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4906F0D91BEC9FC700FF2E28 /* BarcodeItemStore.m */; };
 		498244321BF03333003577CF /* UIImage+ImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 498244311BF03333003577CF /* UIImage+ImageScale.m */; };
 		4982443C1BF0A38C003577CF /* BarcodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4982443B1BF0A38C003577CF /* BarcodeItem.m */; };
+		49AE725D1BF9D75900ADD956 /* NetWorkController_BarcodeCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE725C1BF9D75900ADD956 /* NetWorkController_BarcodeCenter.m */; };
 		49B2967B1BE871E9008CA3CF /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B296771BE871E9008CA3CF /* HomePageViewController.m */; };
 		49B2967C1BE871E9008CA3CF /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B296781BE871E9008CA3CF /* HomePageViewController.xib */; };
 		49B296821BE87220008CA3CF /* HomePageTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B296811BE87220008CA3CF /* HomePageTableViewDataSource.m */; };
@@ -91,6 +92,8 @@
 		498244391BF0746D003577CF /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = CollegeMap/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		4982443A1BF0A38C003577CF /* BarcodeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarcodeItem.h; path = Model/BarcodeItem.h; sourceTree = "<group>"; };
 		4982443B1BF0A38C003577CF /* BarcodeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarcodeItem.m; path = Model/BarcodeItem.m; sourceTree = "<group>"; };
+		49AE725B1BF9D75900ADD956 /* NetWorkController_BarcodeCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkController_BarcodeCenter.h; sourceTree = "<group>"; };
+		49AE725C1BF9D75900ADD956 /* NetWorkController_BarcodeCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkController_BarcodeCenter.m; sourceTree = "<group>"; };
 		49B296761BE871E9008CA3CF /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageViewController.h; path = UI/HomePageViewController.h; sourceTree = "<group>"; };
 		49B296771BE871E9008CA3CF /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageViewController.m; path = UI/HomePageViewController.m; sourceTree = "<group>"; };
 		49B296781BE871E9008CA3CF /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePageViewController.xib; path = UI/HomePageViewController.xib; sourceTree = "<group>"; };
@@ -296,6 +299,8 @@
 		49E71E411BE9A1E900A0E0B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49AE725B1BF9D75900ADD956 /* NetWorkController_BarcodeCenter.h */,
+				49AE725C1BF9D75900ADD956 /* NetWorkController_BarcodeCenter.m */,
 				49E71E421BE9A20C00A0E0B1 /* NetWorkController.h */,
 				49E71E431BE9A20C00A0E0B1 /* NetWorkController.m */,
 				4906F0CF1BEC9B0900FF2E28 /* BarcodeItem.xcdatamodeld */,
@@ -519,6 +524,7 @@
 				4906F0C51BEC52FE00FF2E28 /* TYAlertScaleFadeAnimation.m in Sources */,
 				4906F0C31BEC52FE00FF2E28 /* TYAlertDropDownAnimation.m in Sources */,
 				49E97C991BE89C120009673E /* QRCodeView.m in Sources */,
+				49AE725D1BF9D75900ADD956 /* NetWorkController_BarcodeCenter.m in Sources */,
 				4906F0D11BEC9B0900FF2E28 /* BarcodeItem.xcdatamodeld in Sources */,
 				4982443C1BF0A38C003577CF /* BarcodeItem.m in Sources */,
 				4906F0C01BEC52FE00FF2E28 /* TYAlertController.m in Sources */,
